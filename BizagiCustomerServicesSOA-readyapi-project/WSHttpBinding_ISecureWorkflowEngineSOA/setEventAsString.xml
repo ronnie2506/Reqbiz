@@ -16,14 +16,14 @@
                 </EventData>
                 <Entities>
                   <mTKMTicket>                  
-                    <bCustomerApprovedClosure>1</bCustomerApprovedClosure>
-                    <bCustomerRequestCancel>0</bCustomerRequestCancel>
+                    <bCustomerApprovedClosure>0</bCustomerApprovedClosure>
+                    <bCustomerRequestCancel>1</bCustomerRequestCancel>
                     <xTKMActionsTaken>
                       <mTKMAction>
                         <bCustomerComment>1</bCustomerComment>
                         <sActionTaken><![CDATA[XXX post comment details - Prueba bCustomerApprovedC ]]]]]]>><![CDATA[><![CDATA[</sActionTaken>
                         <uAttachment>
-                          <File fileName="Attachment2.txt"><![CDATA[dGhpcyBpcyBhIHRlc3QgZG9jdW1lbnQ=]]]]]]>><![CDATA[><![CDATA[</File>
+                          <File fileName="Attachment3.txt"><![CDATA[dGhpcyBpcyBhIHRlc3QgZG9jdW1lbnQ=]]]]]]>><![CDATA[><![CDATA[</File>
                         </uAttachment>
                         <sCommentBy><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sCommentBy>
                         <kpTKMAction>
