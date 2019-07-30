@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="e9341854-0629-4d57-873c-2a6f88b9dba4" isOneWay="false" action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" name="QueryEntitiesAsString" bindingOperationName="QueryEntitiesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="e9341854-0629-4d57-873c-2a6f88b9dba4fileName">QueryEntitiesAsString</con:setting></con:settings><con:call id="0c31f1c3-ddc7-4978-b5d1-d574e32898f3" name="Get ticket (header)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:QueryEntitiesAsString>
+      <tem:sxml>
+        <![CDATA[
+          <BizAgiWSParam>
+            <domain>domain</domain>
+            <userName>Portal</userName>
+            <QueryParams>
+              <XPaths>
+                <XPath Path="kmCSCaseGeneralData.iIdCase" Include="true">1902</XPath>
+                <XPath Path="kmCSCaseGeneralData.sCaseNumber" Include="true"/>
+                <XPath Path="sSummary" Include="true"/>
+                <XPath Path="kpTKMTicketStatus.sDescription" Include="true"/>
+                <XPath Path="sDetails" Include="true"/>
+                <XPath Path="kmCSCaseGeneralData.dCreationDate" Include="true"/>
+                <XPath Path="uAttachment" Include="true"/>
+                <XPath Path="kpSeverity.sDescription" Include="true"/>
+                <XPath Path="kpTKMSeverity.sDescription" Include="true"/>
+                <XPath Path="dSolutionDueDate" Include="true"/>
+                <XPath Path="sCopyNotificationsTo" Include="true"/>
+                <XPath Path="kpTKMRequestType.sCode" Include="true"/>
+                <XPath Path="kpTKMRequestType.sDescription" Include="true"/>
+                <XPath Path="kpTKMSubcategory.kpTKMCategory.sDescription" Include="true"/>
+                <XPath Path="kpTKMSubcategory.sDescription" Include="true"/>
+                <XPath Path="kpTKMTaskType.sDescription" Include="true"/>
+                <XPath Path="kpBizagiProduct.sDescription" Include="true"/>
+                <XPath Path="kpTKMDatabase.sDescription" Include="true"/>
+                <XPath Path="kmCustomerReporter.kpCustomerType.sCode" Include="true"/>
+                <XPath Path="kmCustomerError.sCompanyName" Include="true"/>
+                <XPath Path="kpEnvironment.sDescription" Include="true"/>
+                <XPath Path="bErrorOnCloud" Include="true"/>
+                <XPath Path="kmShareFileFolder.dLinkExpiration" Include="true"/>
+                <XPath Path="kmShareFileFolder.sFolderLink" Include="true"/>
+                <XPath Path="bCustomerRequestClosure" Include="true"/>
+              </XPaths>
+            </QueryParams>
+            <Parameters>
+              <Parameter Name="idEnt">10131</Parameter>
+              <Parameter Name="page">1</Parameter>
+              <Parameter Name="PageSize">10</Parameter>
+            </Parameters>
+          </BizAgiWSParam>
+        ]]]]>><![CDATA[
+      </tem:sxml>
+    </tem:QueryEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="2cf79309-ff52-4a20-ab35-4ebf77c94831" name="Get ticket (comments)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:QueryEntitiesAsString>
+      <tem:sxml>
+        <![CDATA[
+          <BizAgiWSParam>
+            <domain>domain</domain>
+            <userName>Portal</userName>
+            <QueryParams>
+              <XPaths>
+                <XPath Path="mTKMTicket.kmCSCaseGeneralData.iIdCase" Include="false">1902</XPath>
+                <XPath Path="dActionDate" Include="true"/>
+                <XPath Path="sCommentBy" Include="true"/>
+                <XPath Path="sActionTaken" Include="true"/>
+                <XPath Path="uAttachment" Include="true"/>
+                <XPath Path="iPublicPostNumber" Include="true" Sort="Asc"/>
+                <XPath Path="bPublic" Include="false">1</XPath>
+              </XPaths>
+            </QueryParams>
+            <Parameters>
+              <Parameter Name="idEnt">10161</Parameter>
+              <Parameter Name="page">1</Parameter>
+              <Parameter Name="PageSize">10</Parameter>
+            </Parameters>
+          </BizAgiWSParam>
+        ]]]]>><![CDATA[
+      </tem:sxml>
+    </tem:QueryEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="2379d5f9-d395-4ff5-b67e-ee5bc31990ab" name="Get ticket (header +comments)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:QueryEntitiesAsString>
+      <tem:sxml>
+        <![CDATA[
+          <BizAgiWSParam>
+            <domain>domain</domain>
+            <userName>Portal</userName>
+            <QueryParams>
+              <XPaths>
+                <XPath Path="kmCSCaseGeneralData.iIdCase" Include="true">1902</XPath>
+                <XPath Path="kmCSCaseGeneralData.sCaseNumber" Include="true"/>
+                <XPath Path="sSummary" Include="true"/>
+                <XPath Path="kpTKMTicketStatus.sDescription" Include="true"/>
+                <XPath Path="sDetails" Include="true"/>
+                <XPath Path="kmCSCaseGeneralData.dCreationDate" Include="true"/>
+                <XPath Path="uAttachment" Include="true"/>
+                <XPath Path="kpSeverity.sDescription" Include="true"/>
+                <XPath Path="kpTKMSeverity.sDescription" Include="true"/>
+                <XPath Path="dSolutionDueDate" Include="true"/>
+                <XPath Path="sCopyNotificationsTo" Include="true"/>
+                <XPath Path="kpTKMRequestType.sCode" Include="true"/>
+                <XPath Path="kpTKMRequestType.sDescription" Include="true"/>
+                <XPath Path="kpTKMSubcategory.kpTKMCategory.sDescription" Include="true"/>
+                <XPath Path="kpTKMSubcategory.sDescription" Include="true"/>
+                <XPath Path="kpTKMTaskType.sDescription" Include="true"/>
+                <XPath Path="kpBizagiProduct.sDescription" Include="true"/>
+                <XPath Path="kpTKMDatabase.sDescription" Include="true"/>
+                <XPath Path="kmCustomerReporter.kpCustomerType.sCode" Include="true"/>
+                <XPath Path="kmCustomerError.sCompanyName" Include="true"/>
+                <XPath Path="kpEnvironment.sDescription" Include="true"/>
+                <XPath Path="bErrorOnCloud" Include="true"/>
+                <XPath Path="kmShareFileFolder.dLinkExpiration" Include="true"/>
+                <XPath Path="kmShareFileFolder.sFolderLink" Include="true"/>
+                <XPath Path="bCustomerRequestClosure" Include="true"/>
+                <XPath Path="xTKMActionsTaken.dActionDate" Include="true"/>
+                <XPath Path="xTKMActionsTaken.sCommentBy" Include="true"/>
+                <XPath Path="xTKMActionsTaken.sActionTaken" Include="true"/>
+                <XPath Path="xTKMActionsTaken.uAttachment" Include="true"/>
+                <XPath Path="xTKMActionsTaken.iPublicPostNumber" Include="true" Sort="Asc"/>
+                <XPath Path="xTKMActionsTaken.bPublic" Include="false">1</XPath>
+              </XPaths>
+            </QueryParams>
+            <Parameters>
+              <Parameter Name="idEnt">10131</Parameter>
+              <Parameter Name="page">1</Parameter>
+              <Parameter Name="PageSize">10</Parameter>
+            </Parameters>
+          </BizAgiWSParam>
+        ]]]]>><![CDATA[
+      </tem:sxml>
+    </tem:QueryEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="867d897a-b427-486c-b918-b1e2d109c5e3" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getCasesAsString" name="getCasesAsString" bindingOperationName="getCasesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="867d897a-b427-486c-b918-b1e2d109c5e3fileName">getCasesAsString</con:setting></con:settings></con:operation>

@@ -1,0 +1,3 @@
+WSHttpBinding_ISecureQuerySOA
+WSHttpBinding_ISecureEntityManagerSOA
+WSHttpBinding_ISecureWorkflowEngineSOA

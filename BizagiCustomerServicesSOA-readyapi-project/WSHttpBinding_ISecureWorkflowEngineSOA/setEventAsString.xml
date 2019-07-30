@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="ca796bfc-7823-4e65-899f-8ce254cb1f78" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsString" name="setEventAsString" bindingOperationName="setEventAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ca796bfc-7823-4e65-899f-8ce254cb1f78fileName">setEventAsString</con:setting></con:settings><con:call id="37655b9f-771a-4d18-8726-cfb331974adc" name="Update ticket (post comment)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:setEventAsString>
+      <tem:eventInfo>
+        <![CDATA[
+          <BizAgiWSParam>
+            <domain>domain</domain>
+            <userName>Portal</userName>
+            <Events>
+              <Event>
+                <EventData>
+                  <idCase>4927</idCase>
+                  <eventName>TKM_ReceiveComment</eventName>
+                </EventData>
+                <Entities>
+                  <mTKMTicket>                  
+                    <bCustomerApprovedClosure>1</bCustomerApprovedClosure>
+                    <bCustomerRequestCancel>0</bCustomerRequestCancel>
+                    <xTKMActionsTaken>
+                      <mTKMAction>
+                        <bCustomerComment>1</bCustomerComment>
+                        <sActionTaken><![CDATA[XXX post comment details - Prueba bCustomerApprovedC ]]]]]]>><![CDATA[><![CDATA[</sActionTaken>
+                        <uAttachment>
+                          <File fileName="Attachment2.txt"><![CDATA[dGhpcyBpcyBhIHRlc3QgZG9jdW1lbnQ=]]]]]]>><![CDATA[><![CDATA[</File>
+                        </uAttachment>
+                        <sCommentBy><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sCommentBy>
+                        <kpTKMAction>
+                          <sCode>POS</sCode>
+                        </kpTKMAction>
+                      </mTKMAction>
+                    </xTKMActionsTaken>
+                  </mTKMTicket>
+                </Entities>
+              </Event>
+            </Events>
+          </BizAgiWSParam>
+        ]]]]>><![CDATA[
+      </tem:eventInfo>
+    </tem:setEventAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation>

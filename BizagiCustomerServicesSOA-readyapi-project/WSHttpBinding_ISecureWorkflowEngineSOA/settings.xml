@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" id="671c3d8d-7235-474d-b8f6-5c9ee8cf2bed" wsaVersion="200508" name="WSHttpBinding_ISecureWorkflowEngineSOA" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_ISecureWorkflowEngineSOA" soapVersion="1_2" anonymous="required" definition="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="671c3d8d-7235-474d-b8f6-5c9ee8cf2bedfileName">WSHttpBinding_ISecureWorkflowEngineSOA</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?wsdl"><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SecureWorkflowEngineSOA" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecureWorkflowEngineSOA_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens/>
+            <sp:RequireClientEntropy/>
+            <sp:RequireServerEntropy/>
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses/>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISecureWorkflowEngineSOA_createCasesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:createCasesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_createCasesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createCasesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_performActivityAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:performActivityAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_performActivityAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:performActivityAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_setEventAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:setEventAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_setEventAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setEventAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getCasesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCasesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getCasesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCasesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_saveActivityAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveActivityAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_saveActivityAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveActivityAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getActivitiesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getActivitiesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getActivitiesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getActivitiesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_suspendCasesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:suspendCasesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_suspendCasesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:suspendCasesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_resumeCasesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:resumeCasesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_resumeCasesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:resumeCasesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getClosedActivitiesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getClosedActivitiesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getClosedActivitiesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getClosedActivitiesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getEventsAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEventsAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getEventsAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEventsAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getWorkflowClassesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWorkflowClassesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getWorkflowClassesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWorkflowClassesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getCategoriesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoriesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getCategoriesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoriesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getAssignationLogAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAssignationLogAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getAssignationLogAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAssignationLogAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_grantCaseAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:grantCaseAccess"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_grantCaseAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:grantCaseAccessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_revokeCaseAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:revokeCaseAccess"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_revokeCaseAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:revokeCaseAccessResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ISecureWorkflowEngineSOA">
+    <wsdl:operation name="createCasesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" message="tns:ISecureWorkflowEngineSOA_createCasesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_createCasesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="performActivityAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/performActivityAsString" message="tns:ISecureWorkflowEngineSOA_performActivityAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/performActivityAsStringResponse" message="tns:ISecureWorkflowEngineSOA_performActivityAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="setEventAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsString" message="tns:ISecureWorkflowEngineSOA_setEventAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsStringResponse" message="tns:ISecureWorkflowEngineSOA_setEventAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCasesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getCasesAsString" message="tns:ISecureWorkflowEngineSOA_getCasesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getCasesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getCasesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="saveActivityAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/saveActivityAsString" message="tns:ISecureWorkflowEngineSOA_saveActivityAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/saveActivityAsStringResponse" message="tns:ISecureWorkflowEngineSOA_saveActivityAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getActivitiesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getActivitiesAsString" message="tns:ISecureWorkflowEngineSOA_getActivitiesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getActivitiesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getActivitiesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="suspendCasesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/suspendCasesAsString" message="tns:ISecureWorkflowEngineSOA_suspendCasesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/suspendCasesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_suspendCasesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="resumeCasesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/resumeCasesAsString" message="tns:ISecureWorkflowEngineSOA_resumeCasesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/resumeCasesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_resumeCasesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getClosedActivitiesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getClosedActivitiesAsString" message="tns:ISecureWorkflowEngineSOA_getClosedActivitiesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getClosedActivitiesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getClosedActivitiesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEventsAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getEventsAsString" message="tns:ISecureWorkflowEngineSOA_getEventsAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getEventsAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getEventsAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowClassesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getWorkflowClassesAsString" message="tns:ISecureWorkflowEngineSOA_getWorkflowClassesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getWorkflowClassesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getWorkflowClassesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getCategoriesAsString" message="tns:ISecureWorkflowEngineSOA_getCategoriesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getCategoriesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getCategoriesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAssignationLogAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getAssignationLogAsString" message="tns:ISecureWorkflowEngineSOA_getAssignationLogAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getAssignationLogAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getAssignationLogAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="grantCaseAccess">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/grantCaseAccess" message="tns:ISecureWorkflowEngineSOA_grantCaseAccess_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/grantCaseAccessResponse" message="tns:ISecureWorkflowEngineSOA_grantCaseAccess_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="revokeCaseAccess">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/revokeCaseAccess" message="tns:ISecureWorkflowEngineSOA_revokeCaseAccess_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/revokeCaseAccessResponse" message="tns:ISecureWorkflowEngineSOA_revokeCaseAccess_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ISecureWorkflowEngineSOA" type="tns:ISecureWorkflowEngineSOA">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISecureWorkflowEngineSOA_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createCasesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="performActivityAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/performActivityAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setEventAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCasesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getCasesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveActivityAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/saveActivityAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActivitiesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getActivitiesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suspendCasesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/suspendCasesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resumeCasesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/resumeCasesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClosedActivitiesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getClosedActivitiesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEventsAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getEventsAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowClassesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getWorkflowClassesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getCategoriesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAssignationLogAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getAssignationLogAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grantCaseAccess">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/grantCaseAccess" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="revokeCaseAccess">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/revokeCaseAccess" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecureWorkflowEngineSOA">
+    <wsdl:port name="WSHttpBinding_ISecureWorkflowEngineSOA" binding="tns:WSHttpBinding_ISecureWorkflowEngineSOA">
+      <soap12:address location="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="createCasesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createCasesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="createCasesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="performActivityAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="activityInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="performActivityAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="performActivityAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setEventAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eventInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setEventAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setEventAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCasesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseFilters" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCasesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCasesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveActivityAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="activityInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveActivityAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saveActivityAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getActivitiesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="activityFilters" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getActivitiesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getActivitiesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="suspendCasesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cases" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="suspendCasesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="suspendCasesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resumeCasesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cases" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resumeCasesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="resumeCasesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClosedActivitiesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClosedActivitiesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getClosedActivitiesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEventsAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="actFilters" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEventsAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getEventsAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWorkflowClassesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWorkflowClassesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getWorkflowClassesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCategoriesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="appName" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCategoriesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCategoriesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAssignationLogAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAssignationLogAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAssignationLogAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="grantCaseAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseAccessXML" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="grantCaseAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="grantCaseAccessResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="revokeCaseAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseAccessXML" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="revokeCaseAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="revokeCaseAccessResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</con:endpoint></con:endpoints></con:interface>

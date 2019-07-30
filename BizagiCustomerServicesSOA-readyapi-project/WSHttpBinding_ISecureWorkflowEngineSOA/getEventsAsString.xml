@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="7ce890e0-a798-44b7-a836-23c0f1c5e2fb" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getEventsAsString" name="getEventsAsString" bindingOperationName="getEventsAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="7ce890e0-a798-44b7-a836-23c0f1c5e2fbfileName">getEventsAsString</con:setting></con:settings></con:operation>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="4fbc052e-ad2d-4369-9693-ce0f0d9d33df" isOneWay="false" action="http://tempuri.org/ISecureQuerySOA/QueryEntities" name="QueryEntities" bindingOperationName="QueryEntities" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="4fbc052e-ad2d-4369-9693-ce0f0d9d33dffileName">QueryEntities</con:setting></con:settings></con:operation>

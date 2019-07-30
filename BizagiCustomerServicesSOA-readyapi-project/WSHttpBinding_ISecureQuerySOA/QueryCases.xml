@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="03f7beb4-2ae6-4118-82bf-7e36ece5ad8c" isOneWay="false" action="http://tempuri.org/ISecureQuerySOA/QueryCases" name="QueryCases" bindingOperationName="QueryCases" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="03f7beb4-2ae6-4118-82bf-7e36ece5ad8cfileName">QueryCases</con:setting></con:settings></con:operation>

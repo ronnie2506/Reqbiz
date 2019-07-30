@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="0bebf373-8733-4c24-9319-a6f8158a2333" isOneWay="false" action="http://tempuri.org/ISecureQuerySOA/QueryCasesAsString" name="QueryCasesAsString" bindingOperationName="QueryCasesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="0bebf373-8733-4c24-9319-a6f8158a2333fileName">QueryCasesAsString</con:setting></con:settings><con:call id="bbb4f25a-388e-4e77-84fd-196da4f69d14" name="Get list of tickets for contact" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+  <tem:QueryCasesAsString>
+    <tem:sxml>
+      <![CDATA[
+        <BizAgiWSParam>
+          <domain>domain</domain>
+          <userName>Portal</userName>
+          <QueryParams>
+            <Internals>
+              <Internal Name="ProcessState" Include="true">Running</Internal>
+              <Internal Name="ProcessState" Include="true">Completed</Internal>
+            </Internals>
+            <XPaths>
+              <XPath Path="mTKMTicket.kmCSCaseGeneralData.sCaseNumber" Include="true"/>
+              <XPath Path="mTKMTicket.kmCSCaseGeneralData.dCreationDate" Include="true"/>
+              <XPath Path="mTKMTicket.sSummary" Include="true"/>
+              <XPath Path="mTKMTicket.kpTKMTicketStatus.sDescription" Include="true"/>
+              <XPath Path="mTKMTicket.kmShareFileFolder.sFolderLink" Include="true" />
+              <XPath Path="mTKMTicket.dLastPublicPostDate" Include="true">
+                <From></From>
+                <To></To>
+              </XPath>
+              <XPath Path="mTKMTicket.kpTKMTicketStatus.bPublic" Include="false">1</XPath>
+              <XPath Path="mTKMTicket.kmCustomerSupportContact.sUsername" Include="false"><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</XPath>
+            </XPaths>
+          </QueryParams>
+          <Parameters>
+            <Parameter Name="page">1</Parameter>
+            <Parameter Name="pageSize">10</Parameter>
+            <Parameter Name="searchAllUsers">true</Parameter>
+          </Parameters>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+    </tem:sxml>
+  </tem:QueryCasesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureQuerySOA/QueryCasesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation>

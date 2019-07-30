@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" id="6ceebb15-ac0e-4da5-bf12-eae6fd1e1a69" wsaVersion="200508" name="WSHttpBinding_ISecureQuerySOA" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_ISecureQuerySOA" soapVersion="1_2" anonymous="required" definition="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="6ceebb15-ac0e-4da5-bf12-eae6fd1e1a69fileName">WSHttpBinding_ISecureQuerySOA</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl"><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SecureQuerySOA" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecureQuerySOA_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens/>
+            <sp:RequireClientEntropy/>
+            <sp:RequireServerEntropy/>
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses/>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:element name="QueryCases">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="q1:ArrayOfanyType" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryCasesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="QueryCasesResult" nillable="true" type="q2:ArrayOfanyType" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryEntities">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="q3:ArrayOfanyType" xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryEntitiesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="QueryEntitiesResult" nillable="true" type="q4:ArrayOfanyType" xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryCasesAsString">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sxml" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryCasesAsStringResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="QueryCasesAsStringResult" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryEntitiesAsString">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sxml" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryEntitiesAsStringResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="QueryEntitiesAsStringResult" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xs:complexType name="ArrayOfanyType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" type="xs:anyType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfanyType" nillable="true" type="tns:ArrayOfanyType"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ISecureQuerySOA_QueryCases_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCases"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryCases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCasesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryEntities_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryEntities"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryEntities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryEntitiesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryCasesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCasesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryCasesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCasesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryEntitiesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryEntitiesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryEntitiesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryEntitiesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ISecureQuerySOA">
+    <wsdl:operation name="QueryCases">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryCases" message="tns:ISecureQuerySOA_QueryCases_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryCasesResponse" message="tns:ISecureQuerySOA_QueryCases_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEntities">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryEntities" message="tns:ISecureQuerySOA_QueryEntities_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesResponse" message="tns:ISecureQuerySOA_QueryEntities_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCasesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryCasesAsString" message="tns:ISecureQuerySOA_QueryCasesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryCasesAsStringResponse" message="tns:ISecureQuerySOA_QueryCasesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEntitiesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" message="tns:ISecureQuerySOA_QueryEntitiesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsStringResponse" message="tns:ISecureQuerySOA_QueryEntitiesAsString_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ISecureQuerySOA" type="tns:ISecureQuerySOA">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISecureQuerySOA_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="QueryCases">
+      <soap12:operation soapAction="http://tempuri.org/ISecureQuerySOA/QueryCases" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEntities">
+      <soap12:operation soapAction="http://tempuri.org/ISecureQuerySOA/QueryEntities" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCasesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureQuerySOA/QueryCasesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEntitiesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecureQuerySOA">
+    <wsdl:port name="WSHttpBinding_ISecureQuerySOA" binding="tns:WSHttpBinding_ISecureQuerySOA">
+      <soap12:address location="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</con:endpoint></con:endpoints></con:interface>

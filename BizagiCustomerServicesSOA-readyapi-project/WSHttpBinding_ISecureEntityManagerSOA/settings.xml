@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" id="7a30a285-4bff-4ef6-a077-ec010a34a417" wsaVersion="200508" name="WSHttpBinding_ISecureEntityManagerSOA" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_ISecureEntityManagerSOA" soapVersion="1_2" anonymous="required" definition="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="7a30a285-4bff-4ef6-a077-ec010a34a417fileName">WSHttpBinding_ISecureEntityManagerSOA</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?wsdl"><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SecureEntityManagerSOA" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecureEntityManagerSOA_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens/>
+            <sp:RequireClientEntropy/>
+            <sp:RequireServerEntropy/>
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses/>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitiesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitiesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitiesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitiesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitiesUsingSchemaAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitiesUsingSchemaAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitiesUsingSchemaAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitiesUsingSchemaAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityAsBase64GZip_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityAsBase64GZip"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityAsBase64GZip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityAsBase64GZipResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitySchemaStr_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitySchemaStr"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitySchemaStr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitySchemaStrResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingSchemaLiteAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingSchemaLiteAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingSchemaLiteAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingSchemaLiteAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingSchemaAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingSchemaAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingSchemaAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingSchemaAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingXPathsAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingXPathsAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingXPathsAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingXPathsAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityWithKeyAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityWithKeyAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityWithKeyAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityWithKeyAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_CreateUserAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_CreateUserAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ISecureEntityManagerSOA">
+    <wsdl:operation name="getEntitiesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" message="tns:ISecureEntityManagerSOA_getEntitiesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsStringResponse" message="tns:ISecureEntityManagerSOA_getEntitiesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEntitiesUsingSchemaAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesUsingSchemaAsString" message="tns:ISecureEntityManagerSOA_getEntitiesUsingSchemaAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesUsingSchemaAsStringResponse" message="tns:ISecureEntityManagerSOA_getEntitiesUsingSchemaAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsString" message="tns:ISecureEntityManagerSOA_saveEntityAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsStringResponse" message="tns:ISecureEntityManagerSOA_saveEntityAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityAsBase64GZip">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsBase64GZip" message="tns:ISecureEntityManagerSOA_saveEntityAsBase64GZip_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsBase64GZipResponse" message="tns:ISecureEntityManagerSOA_saveEntityAsBase64GZip_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEntitySchemaStr">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitySchemaStr" message="tns:ISecureEntityManagerSOA_getEntitySchemaStr_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitySchemaStrResponse" message="tns:ISecureEntityManagerSOA_getEntitySchemaStr_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingSchemaLiteAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaLiteAsString" message="tns:ISecureEntityManagerSOA_getCaseDataUsingSchemaLiteAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaLiteAsStringResponse" message="tns:ISecureEntityManagerSOA_getCaseDataUsingSchemaLiteAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingSchemaAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaAsString" message="tns:ISecureEntityManagerSOA_getCaseDataUsingSchemaAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaAsStringResponse" message="tns:ISecureEntityManagerSOA_getCaseDataUsingSchemaAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingXPathsAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingXPathsAsString" message="tns:ISecureEntityManagerSOA_getCaseDataUsingXPathsAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingXPathsAsStringResponse" message="tns:ISecureEntityManagerSOA_getCaseDataUsingXPathsAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityWithKeyAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityWithKeyAsString" message="tns:ISecureEntityManagerSOA_saveEntityWithKeyAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityWithKeyAsStringResponse" message="tns:ISecureEntityManagerSOA_saveEntityWithKeyAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/CreateUserAsString" message="tns:ISecureEntityManagerSOA_CreateUserAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/CreateUserAsStringResponse" message="tns:ISecureEntityManagerSOA_CreateUserAsString_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ISecureEntityManagerSOA" type="tns:ISecureEntityManagerSOA">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISecureEntityManagerSOA_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getEntitiesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntitiesUsingSchemaAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesUsingSchemaAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityAsBase64GZip">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsBase64GZip" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntitySchemaStr">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getEntitySchemaStr" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingSchemaLiteAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaLiteAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingSchemaAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingXPathsAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingXPathsAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityWithKeyAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/saveEntityWithKeyAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/CreateUserAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecureEntityManagerSOA">
+    <wsdl:port name="WSHttpBinding_ISecureEntityManagerSOA" binding="tns:WSHttpBinding_ISecureEntityManagerSOA">
+      <soap12:address location="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="getEntitiesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entitiesInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEntitiesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getEntitiesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEntitiesUsingSchemaAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entitiesInfo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="schema" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEntitiesUsingSchemaAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getEntitiesUsingSchemaAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saveEntityAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityAsBase64GZip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64GzippedFile" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityAsBase64GZipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saveEntityAsBase64GZipResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEntitySchemaStr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityName" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEntitySchemaStrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getEntitySchemaStrResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingSchemaLiteAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCase" type="xs:int"/>
+        <xs:element minOccurs="0" name="sxsd" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingSchemaLiteAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCaseDataUsingSchemaLiteAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingSchemaAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCase" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="idWorkItem" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="sxsd" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingSchemaAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCaseDataUsingSchemaAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingXPathsAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingXPathsAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCaseDataUsingXPathsAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityWithKeyAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oEntityKey" nillable="true" type="xs:anyType"/>
+        <xs:element minOccurs="0" name="entityInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityWithKeyAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saveEntityWithKeyAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUserAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUserAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateUserAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint></con:endpoints></con:interface>
