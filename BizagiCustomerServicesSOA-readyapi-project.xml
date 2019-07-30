@@ -1,0 +1,2156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e3ddbd3b-7ceb-4d0e-af09-b04609297d02" activeEnvironment="Default environment" name="BizagiCustomerServicesSOA" resourceRoot="${projectDir}" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.7.0 2019-05-30T13:25:24Z" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="6ceebb15-ac0e-4da5-bf12-eae6fd1e1a69" wsaVersion="200508" name="WSHttpBinding_ISecureQuerySOA" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_ISecureQuerySOA" soapVersion="1_2" anonymous="required" definition="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="6ceebb15-ac0e-4da5-bf12-eae6fd1e1a69fileName">WSHttpBinding_ISecureQuerySOA</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl"><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SecureQuerySOA" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecureQuerySOA_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens/>
+            <sp:RequireClientEntropy/>
+            <sp:RequireServerEntropy/>
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses/>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:element name="QueryCases">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="q1:ArrayOfanyType" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryCasesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="QueryCasesResult" nillable="true" type="q2:ArrayOfanyType" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryEntities">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="xml" nillable="true" type="q3:ArrayOfanyType" xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryEntitiesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="QueryEntitiesResult" nillable="true" type="q4:ArrayOfanyType" xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryCasesAsString">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sxml" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryCasesAsStringResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="QueryCasesAsStringResult" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryEntitiesAsString">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="sxml" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="QueryEntitiesAsStringResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="QueryEntitiesAsStringResult" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xs:complexType name="ArrayOfanyType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" type="xs:anyType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfanyType" nillable="true" type="tns:ArrayOfanyType"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ISecureQuerySOA_QueryCases_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCases"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryCases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCasesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryEntities_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryEntities"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryEntities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryEntitiesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryCasesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCasesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryCasesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCasesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryEntitiesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryEntitiesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureQuerySOA_QueryEntitiesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryEntitiesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ISecureQuerySOA">
+    <wsdl:operation name="QueryCases">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryCases" message="tns:ISecureQuerySOA_QueryCases_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryCasesResponse" message="tns:ISecureQuerySOA_QueryCases_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEntities">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryEntities" message="tns:ISecureQuerySOA_QueryEntities_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesResponse" message="tns:ISecureQuerySOA_QueryEntities_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCasesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryCasesAsString" message="tns:ISecureQuerySOA_QueryCasesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryCasesAsStringResponse" message="tns:ISecureQuerySOA_QueryCasesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEntitiesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" message="tns:ISecureQuerySOA_QueryEntitiesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsStringResponse" message="tns:ISecureQuerySOA_QueryEntitiesAsString_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ISecureQuerySOA" type="tns:ISecureQuerySOA">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISecureQuerySOA_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="QueryCases">
+      <soap12:operation soapAction="http://tempuri.org/ISecureQuerySOA/QueryCases" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEntities">
+      <soap12:operation soapAction="http://tempuri.org/ISecureQuerySOA/QueryEntities" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCasesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureQuerySOA/QueryCasesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryEntitiesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecureQuerySOA">
+    <wsdl:port name="WSHttpBinding_ISecureQuerySOA" binding="tns:WSHttpBinding_ISecureQuerySOA">
+      <soap12:address location="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</con:endpoint></con:endpoints><con:operation id="03f7beb4-2ae6-4118-82bf-7e36ece5ad8c" isOneWay="false" action="http://tempuri.org/ISecureQuerySOA/QueryCases" name="QueryCases" bindingOperationName="QueryCases" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="03f7beb4-2ae6-4118-82bf-7e36ece5ad8cfileName">QueryCases</con:setting></con:settings></con:operation><con:operation id="0bebf373-8733-4c24-9319-a6f8158a2333" isOneWay="false" action="http://tempuri.org/ISecureQuerySOA/QueryCasesAsString" name="QueryCasesAsString" bindingOperationName="QueryCasesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="0bebf373-8733-4c24-9319-a6f8158a2333fileName">QueryCasesAsString</con:setting></con:settings><con:call id="bbb4f25a-388e-4e77-84fd-196da4f69d14" name="Get list of tickets for contact" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+  <tem:QueryCasesAsString>
+    <tem:sxml>
+      <![CDATA[
+        <BizAgiWSParam>
+          <domain>domain</domain>
+          <userName>Portal</userName>
+          <QueryParams>
+            <Internals>
+              <Internal Name="ProcessState" Include="true">Running</Internal>
+              <Internal Name="ProcessState" Include="true">Completed</Internal>
+            </Internals>
+            <XPaths>
+              <XPath Path="mTKMTicket.kmCSCaseGeneralData.sCaseNumber" Include="true"/>
+              <XPath Path="mTKMTicket.kmCSCaseGeneralData.dCreationDate" Include="true"/>
+              <XPath Path="mTKMTicket.sSummary" Include="true"/>
+              <XPath Path="mTKMTicket.kpTKMTicketStatus.sDescription" Include="true"/>
+              <XPath Path="mTKMTicket.kmShareFileFolder.sFolderLink" Include="true" />
+              <XPath Path="mTKMTicket.dLastPublicPostDate" Include="true">
+                <From></From>
+                <To></To>
+              </XPath>
+              <XPath Path="mTKMTicket.kpTKMTicketStatus.bPublic" Include="false">1</XPath>
+              <XPath Path="mTKMTicket.kmCustomerSupportContact.sUsername" Include="false"><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</XPath>
+            </XPaths>
+          </QueryParams>
+          <Parameters>
+            <Parameter Name="page">1</Parameter>
+            <Parameter Name="pageSize">10</Parameter>
+            <Parameter Name="searchAllUsers">true</Parameter>
+          </Parameters>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+    </tem:sxml>
+  </tem:QueryCasesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureQuerySOA/QueryCasesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4fbc052e-ad2d-4369-9693-ce0f0d9d33df" isOneWay="false" action="http://tempuri.org/ISecureQuerySOA/QueryEntities" name="QueryEntities" bindingOperationName="QueryEntities" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="4fbc052e-ad2d-4369-9693-ce0f0d9d33dffileName">QueryEntities</con:setting></con:settings></con:operation><con:operation id="e9341854-0629-4d57-873c-2a6f88b9dba4" isOneWay="false" action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" name="QueryEntitiesAsString" bindingOperationName="QueryEntitiesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="e9341854-0629-4d57-873c-2a6f88b9dba4fileName">QueryEntitiesAsString</con:setting></con:settings><con:call id="0c31f1c3-ddc7-4978-b5d1-d574e32898f3" name="Get ticket (header)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:QueryEntitiesAsString>
+      <tem:sxml>
+        <![CDATA[
+          <BizAgiWSParam>
+            <domain>domain</domain>
+            <userName>Portal</userName>
+            <QueryParams>
+              <XPaths>
+                <XPath Path="kmCSCaseGeneralData.iIdCase" Include="true">1902</XPath>
+                <XPath Path="kmCSCaseGeneralData.sCaseNumber" Include="true"/>
+                <XPath Path="sSummary" Include="true"/>
+                <XPath Path="kpTKMTicketStatus.sDescription" Include="true"/>
+                <XPath Path="sDetails" Include="true"/>
+                <XPath Path="kmCSCaseGeneralData.dCreationDate" Include="true"/>
+                <XPath Path="uAttachment" Include="true"/>
+                <XPath Path="kpSeverity.sDescription" Include="true"/>
+                <XPath Path="kpTKMSeverity.sDescription" Include="true"/>
+                <XPath Path="dSolutionDueDate" Include="true"/>
+                <XPath Path="sCopyNotificationsTo" Include="true"/>
+                <XPath Path="kpTKMRequestType.sCode" Include="true"/>
+                <XPath Path="kpTKMRequestType.sDescription" Include="true"/>
+                <XPath Path="kpTKMSubcategory.kpTKMCategory.sDescription" Include="true"/>
+                <XPath Path="kpTKMSubcategory.sDescription" Include="true"/>
+                <XPath Path="kpTKMTaskType.sDescription" Include="true"/>
+                <XPath Path="kpBizagiProduct.sDescription" Include="true"/>
+                <XPath Path="kpTKMDatabase.sDescription" Include="true"/>
+                <XPath Path="kmCustomerReporter.kpCustomerType.sCode" Include="true"/>
+                <XPath Path="kmCustomerError.sCompanyName" Include="true"/>
+                <XPath Path="kpEnvironment.sDescription" Include="true"/>
+                <XPath Path="bErrorOnCloud" Include="true"/>
+                <XPath Path="kmShareFileFolder.dLinkExpiration" Include="true"/>
+                <XPath Path="kmShareFileFolder.sFolderLink" Include="true"/>
+                <XPath Path="bCustomerRequestClosure" Include="true"/>
+              </XPaths>
+            </QueryParams>
+            <Parameters>
+              <Parameter Name="idEnt">10131</Parameter>
+              <Parameter Name="page">1</Parameter>
+              <Parameter Name="PageSize">10</Parameter>
+            </Parameters>
+          </BizAgiWSParam>
+        ]]]]>><![CDATA[
+      </tem:sxml>
+    </tem:QueryEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="2cf79309-ff52-4a20-ab35-4ebf77c94831" name="Get ticket (comments)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:QueryEntitiesAsString>
+      <tem:sxml>
+        <![CDATA[
+          <BizAgiWSParam>
+            <domain>domain</domain>
+            <userName>Portal</userName>
+            <QueryParams>
+              <XPaths>
+                <XPath Path="mTKMTicket.kmCSCaseGeneralData.iIdCase" Include="false">1902</XPath>
+                <XPath Path="dActionDate" Include="true"/>
+                <XPath Path="sCommentBy" Include="true"/>
+                <XPath Path="sActionTaken" Include="true"/>
+                <XPath Path="uAttachment" Include="true"/>
+                <XPath Path="iPublicPostNumber" Include="true" Sort="Asc"/>
+                <XPath Path="bPublic" Include="false">1</XPath>
+              </XPaths>
+            </QueryParams>
+            <Parameters>
+              <Parameter Name="idEnt">10161</Parameter>
+              <Parameter Name="page">1</Parameter>
+              <Parameter Name="PageSize">10</Parameter>
+            </Parameters>
+          </BizAgiWSParam>
+        ]]]]>><![CDATA[
+      </tem:sxml>
+    </tem:QueryEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="2379d5f9-d395-4ff5-b67e-ee5bc31990ab" name="Get ticket (header +comments)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:QueryEntitiesAsString>
+      <tem:sxml>
+        <![CDATA[
+          <BizAgiWSParam>
+            <domain>domain</domain>
+            <userName>Portal</userName>
+            <QueryParams>
+              <XPaths>
+                <XPath Path="kmCSCaseGeneralData.iIdCase" Include="true">1902</XPath>
+                <XPath Path="kmCSCaseGeneralData.sCaseNumber" Include="true"/>
+                <XPath Path="sSummary" Include="true"/>
+                <XPath Path="kpTKMTicketStatus.sDescription" Include="true"/>
+                <XPath Path="sDetails" Include="true"/>
+                <XPath Path="kmCSCaseGeneralData.dCreationDate" Include="true"/>
+                <XPath Path="uAttachment" Include="true"/>
+                <XPath Path="kpSeverity.sDescription" Include="true"/>
+                <XPath Path="kpTKMSeverity.sDescription" Include="true"/>
+                <XPath Path="dSolutionDueDate" Include="true"/>
+                <XPath Path="sCopyNotificationsTo" Include="true"/>
+                <XPath Path="kpTKMRequestType.sCode" Include="true"/>
+                <XPath Path="kpTKMRequestType.sDescription" Include="true"/>
+                <XPath Path="kpTKMSubcategory.kpTKMCategory.sDescription" Include="true"/>
+                <XPath Path="kpTKMSubcategory.sDescription" Include="true"/>
+                <XPath Path="kpTKMTaskType.sDescription" Include="true"/>
+                <XPath Path="kpBizagiProduct.sDescription" Include="true"/>
+                <XPath Path="kpTKMDatabase.sDescription" Include="true"/>
+                <XPath Path="kmCustomerReporter.kpCustomerType.sCode" Include="true"/>
+                <XPath Path="kmCustomerError.sCompanyName" Include="true"/>
+                <XPath Path="kpEnvironment.sDescription" Include="true"/>
+                <XPath Path="bErrorOnCloud" Include="true"/>
+                <XPath Path="kmShareFileFolder.dLinkExpiration" Include="true"/>
+                <XPath Path="kmShareFileFolder.sFolderLink" Include="true"/>
+                <XPath Path="bCustomerRequestClosure" Include="true"/>
+                <XPath Path="xTKMActionsTaken.dActionDate" Include="true"/>
+                <XPath Path="xTKMActionsTaken.sCommentBy" Include="true"/>
+                <XPath Path="xTKMActionsTaken.sActionTaken" Include="true"/>
+                <XPath Path="xTKMActionsTaken.uAttachment" Include="true"/>
+                <XPath Path="xTKMActionsTaken.iPublicPostNumber" Include="true" Sort="Asc"/>
+                <XPath Path="xTKMActionsTaken.bPublic" Include="false">1</XPath>
+              </XPaths>
+            </QueryParams>
+            <Parameters>
+              <Parameter Name="idEnt">10131</Parameter>
+              <Parameter Name="page">1</Parameter>
+              <Parameter Name="PageSize">10</Parameter>
+            </Parameters>
+          </BizAgiWSParam>
+        ]]]]>><![CDATA[
+      </tem:sxml>
+    </tem:QueryEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureQuerySOA/QueryEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="7a30a285-4bff-4ef6-a077-ec010a34a417" wsaVersion="200508" name="WSHttpBinding_ISecureEntityManagerSOA" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_ISecureEntityManagerSOA" soapVersion="1_2" anonymous="required" definition="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="7a30a285-4bff-4ef6-a077-ec010a34a417fileName">WSHttpBinding_ISecureEntityManagerSOA</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?wsdl"><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SecureEntityManagerSOA" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecureEntityManagerSOA_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens/>
+            <sp:RequireClientEntropy/>
+            <sp:RequireServerEntropy/>
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses/>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitiesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitiesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitiesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitiesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitiesUsingSchemaAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitiesUsingSchemaAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitiesUsingSchemaAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitiesUsingSchemaAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityAsBase64GZip_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityAsBase64GZip"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityAsBase64GZip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityAsBase64GZipResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitySchemaStr_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitySchemaStr"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getEntitySchemaStr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEntitySchemaStrResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingSchemaLiteAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingSchemaLiteAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingSchemaLiteAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingSchemaLiteAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingSchemaAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingSchemaAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingSchemaAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingSchemaAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingXPathsAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingXPathsAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_getCaseDataUsingXPathsAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCaseDataUsingXPathsAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityWithKeyAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityWithKeyAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_saveEntityWithKeyAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveEntityWithKeyAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_CreateUserAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureEntityManagerSOA_CreateUserAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ISecureEntityManagerSOA">
+    <wsdl:operation name="getEntitiesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" message="tns:ISecureEntityManagerSOA_getEntitiesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsStringResponse" message="tns:ISecureEntityManagerSOA_getEntitiesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEntitiesUsingSchemaAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesUsingSchemaAsString" message="tns:ISecureEntityManagerSOA_getEntitiesUsingSchemaAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesUsingSchemaAsStringResponse" message="tns:ISecureEntityManagerSOA_getEntitiesUsingSchemaAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsString" message="tns:ISecureEntityManagerSOA_saveEntityAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsStringResponse" message="tns:ISecureEntityManagerSOA_saveEntityAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityAsBase64GZip">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsBase64GZip" message="tns:ISecureEntityManagerSOA_saveEntityAsBase64GZip_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsBase64GZipResponse" message="tns:ISecureEntityManagerSOA_saveEntityAsBase64GZip_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEntitySchemaStr">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitySchemaStr" message="tns:ISecureEntityManagerSOA_getEntitySchemaStr_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getEntitySchemaStrResponse" message="tns:ISecureEntityManagerSOA_getEntitySchemaStr_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingSchemaLiteAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaLiteAsString" message="tns:ISecureEntityManagerSOA_getCaseDataUsingSchemaLiteAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaLiteAsStringResponse" message="tns:ISecureEntityManagerSOA_getCaseDataUsingSchemaLiteAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingSchemaAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaAsString" message="tns:ISecureEntityManagerSOA_getCaseDataUsingSchemaAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaAsStringResponse" message="tns:ISecureEntityManagerSOA_getCaseDataUsingSchemaAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingXPathsAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingXPathsAsString" message="tns:ISecureEntityManagerSOA_getCaseDataUsingXPathsAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingXPathsAsStringResponse" message="tns:ISecureEntityManagerSOA_getCaseDataUsingXPathsAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityWithKeyAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityWithKeyAsString" message="tns:ISecureEntityManagerSOA_saveEntityWithKeyAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityWithKeyAsStringResponse" message="tns:ISecureEntityManagerSOA_saveEntityWithKeyAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/CreateUserAsString" message="tns:ISecureEntityManagerSOA_CreateUserAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureEntityManagerSOA/CreateUserAsStringResponse" message="tns:ISecureEntityManagerSOA_CreateUserAsString_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ISecureEntityManagerSOA" type="tns:ISecureEntityManagerSOA">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISecureEntityManagerSOA_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getEntitiesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntitiesUsingSchemaAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesUsingSchemaAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityAsBase64GZip">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsBase64GZip" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntitySchemaStr">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getEntitySchemaStr" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingSchemaLiteAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaLiteAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingSchemaAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCaseDataUsingXPathsAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingXPathsAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveEntityWithKeyAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/saveEntityWithKeyAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureEntityManagerSOA/CreateUserAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecureEntityManagerSOA">
+    <wsdl:port name="WSHttpBinding_ISecureEntityManagerSOA" binding="tns:WSHttpBinding_ISecureEntityManagerSOA">
+      <soap12:address location="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="getEntitiesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entitiesInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEntitiesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getEntitiesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEntitiesUsingSchemaAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entitiesInfo" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="schema" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEntitiesUsingSchemaAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getEntitiesUsingSchemaAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saveEntityAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityAsBase64GZip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="base64GzippedFile" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityAsBase64GZipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saveEntityAsBase64GZipResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEntitySchemaStr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityName" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEntitySchemaStrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getEntitySchemaStrResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingSchemaLiteAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCase" type="xs:int"/>
+        <xs:element minOccurs="0" name="sxsd" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingSchemaLiteAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCaseDataUsingSchemaLiteAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingSchemaAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCase" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="idWorkItem" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="sxsd" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingSchemaAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCaseDataUsingSchemaAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingXPathsAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sXml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCaseDataUsingXPathsAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCaseDataUsingXPathsAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityWithKeyAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oEntityKey" nillable="true" type="xs:anyType"/>
+        <xs:element minOccurs="0" name="entityInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveEntityWithKeyAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saveEntityWithKeyAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUserAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUserAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateUserAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint></con:endpoints><con:operation id="1f2a3071-b10e-478b-9597-75f9185a94d7" isOneWay="false" action="http://tempuri.org/ISecureEntityManagerSOA/CreateUserAsString" name="CreateUserAsString" bindingOperationName="CreateUserAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="1f2a3071-b10e-478b-9597-75f9185a94d7fileName">CreateUserAsString</con:setting></con:settings></con:operation><con:operation id="c8012e31-7662-4a4f-a387-54a5228908c1" isOneWay="false" action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaAsString" name="getCaseDataUsingSchemaAsString" bindingOperationName="getCaseDataUsingSchemaAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="c8012e31-7662-4a4f-a387-54a5228908c1fileName">getCaseDataUsingSchemaAsString</con:setting></con:settings></con:operation><con:operation id="e7e86e81-1a72-4ae7-ab71-27f4e62aea10" isOneWay="false" action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingSchemaLiteAsString" name="getCaseDataUsingSchemaLiteAsString" bindingOperationName="getCaseDataUsingSchemaLiteAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="e7e86e81-1a72-4ae7-ab71-27f4e62aea10fileName">getCaseDataUsingSchemaLiteAsString</con:setting></con:settings></con:operation><con:operation id="2a8ab2a6-fa7a-42b3-acb2-37987030f6a6" isOneWay="false" action="http://tempuri.org/ISecureEntityManagerSOA/getCaseDataUsingXPathsAsString" name="getCaseDataUsingXPathsAsString" bindingOperationName="getCaseDataUsingXPathsAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="2a8ab2a6-fa7a-42b3-acb2-37987030f6a6fileName">getCaseDataUsingXPathsAsString</con:setting></con:settings></con:operation><con:operation id="7032cec4-97fa-4e24-a847-bb81675eb21c" isOneWay="false" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" name="getEntitiesAsString" bindingOperationName="getEntitiesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="7032cec4-97fa-4e24-a847-bb81675eb21cfileName">getEntitiesAsString</con:setting></con:settings><con:call id="146cf20e-170d-4956-9885-9e25fe31697e" name="pBizagiProduct" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>pBizagiProduct</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="33c3ef33-be73-4608-8f03-592ae04b504a" name="pCustomerType" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>pCustomerType</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="7e7d8721-f3cb-4d1f-a753-c565576a809b" name="pEnvironment" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>pEnvironment</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="8539be58-6b88-4589-83b7-a2ac6932301e" name="pShareFileConfiguration" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>pShareFileConfiguration</EntityName>
+            <Filters>sCode='DEV'</Filters>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="2d2ce0c3-9c4c-465f-8337-06fac51f85b3" name="pShareFileFolderType" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>pShareFileFolderType</EntityName>
+            <Filters>sCode='TNCP'</Filters>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="71867cfb-1d1c-45c9-aac2-9375b84aac7d" name="pTKMCategory" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>pTKMCategory</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="6b02a9a0-c4ed-4d79-8621-13641e16a436" name="pTKMDatabase" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>pTKMDatabase</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="87377b7a-f1d8-4967-953a-5308e0eb4a5a" name="pTKMRequestType" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>pTKMRequestType</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="5b9ed945-190a-4788-a4a0-5ff31ad7da15" name="pTKMTaskType" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>pTKMTaskType</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="776d1b04-71f8-4b80-b5b8-50b925e90e82" name="pTKMSubcategory" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>pTKMSubcategory</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c84fc346-0068-4e21-8ea7-1909c1458784" name="LANGUAGE" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>LANGUAGE</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="d9fe6c52-1f9d-40c3-a9a9-80ce773ed325" name="TIMEZONE" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>BATIMEZONE</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="02735ceb-abe5-496d-8de7-94e826978ae1" name="pSeverity" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request/><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="839540d8-af2c-4c5a-af5b-8dbc16d99230" name="pTKMSurvey" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>mCustomer</EntityName>
+            <Filters>
+            sCRMId ='TESTCRM'
+            </Filters>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c0dd51b8-3b70-44ad-902b-8e4647c90876" name="mCustomer" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>mCustomer</EntityName>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString"/><con:wsrmConfig version="1.2"/></con:call><con:call id="60eaaf8b-7b84-486b-8f66-482d76623a76" name="Customer Filter" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/EntityManagerSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:getEntitiesAsString>
+      <tem:entitiesInfo>
+      <![CDATA[
+        <BizAgiWSParam>
+          <EntityData>
+            <EntityName>mCustomer</EntityName>
+            <Filters>
+            sCRMId ='TESTCRM'
+            </Filters>
+          </EntityData>
+        </BizAgiWSParam>
+      ]]]]>><![CDATA[
+      </tem:entitiesInfo>
+    </tem:getEntitiesAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d4016e8b-99d1-4475-8e80-42359cc4eacf" isOneWay="false" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitiesUsingSchemaAsString" name="getEntitiesUsingSchemaAsString" bindingOperationName="getEntitiesUsingSchemaAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="d4016e8b-99d1-4475-8e80-42359cc4eacffileName">getEntitiesUsingSchemaAsString</con:setting></con:settings></con:operation><con:operation id="868be082-027c-488f-90ca-0118fdc231ac" isOneWay="false" action="http://tempuri.org/ISecureEntityManagerSOA/getEntitySchemaStr" name="getEntitySchemaStr" bindingOperationName="getEntitySchemaStr" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="868be082-027c-488f-90ca-0118fdc231acfileName">getEntitySchemaStr</con:setting></con:settings></con:operation><con:operation id="31489be7-a1c2-4d34-a432-06df07f8d654" isOneWay="false" action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsBase64GZip" name="saveEntityAsBase64GZip" bindingOperationName="saveEntityAsBase64GZip" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="31489be7-a1c2-4d34-a432-06df07f8d654fileName">saveEntityAsBase64GZip</con:setting></con:settings></con:operation><con:operation id="473d6e7e-d60b-4587-81f0-3a8d0a961f18" isOneWay="false" action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityAsString" name="saveEntityAsString" bindingOperationName="saveEntityAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="473d6e7e-d60b-4587-81f0-3a8d0a961f18fileName">saveEntityAsString</con:setting></con:settings></con:operation><con:operation id="1586efad-9883-45d4-ac2b-fcb2eed8f0f9" isOneWay="false" action="http://tempuri.org/ISecureEntityManagerSOA/saveEntityWithKeyAsString" name="saveEntityWithKeyAsString" bindingOperationName="saveEntityWithKeyAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="1586efad-9883-45d4-ac2b-fcb2eed8f0f9fileName">saveEntityWithKeyAsString</con:setting></con:settings></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="671c3d8d-7235-474d-b8f6-5c9ee8cf2bed" wsaVersion="200508" name="WSHttpBinding_ISecureWorkflowEngineSOA" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_ISecureWorkflowEngineSOA" soapVersion="1_2" anonymous="required" definition="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="671c3d8d-7235-474d-b8f6-5c9ee8cf2bedfileName">WSHttpBinding_ISecureWorkflowEngineSOA</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?wsdl"><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SecureWorkflowEngineSOA" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISecureWorkflowEngineSOA_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10/>
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens/>
+            <sp:RequireClientEntropy/>
+            <sp:RequireServerEntropy/>
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses/>
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISecureWorkflowEngineSOA_createCasesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:createCasesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_createCasesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createCasesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_performActivityAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:performActivityAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_performActivityAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:performActivityAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_setEventAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:setEventAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_setEventAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setEventAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getCasesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCasesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getCasesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCasesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_saveActivityAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveActivityAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_saveActivityAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveActivityAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getActivitiesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getActivitiesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getActivitiesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getActivitiesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_suspendCasesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:suspendCasesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_suspendCasesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:suspendCasesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_resumeCasesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:resumeCasesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_resumeCasesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:resumeCasesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getClosedActivitiesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getClosedActivitiesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getClosedActivitiesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getClosedActivitiesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getEventsAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEventsAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getEventsAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEventsAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getWorkflowClassesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWorkflowClassesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getWorkflowClassesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWorkflowClassesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getCategoriesAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoriesAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getCategoriesAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoriesAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getAssignationLogAsString_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAssignationLogAsString"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_getAssignationLogAsString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAssignationLogAsStringResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_grantCaseAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:grantCaseAccess"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_grantCaseAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:grantCaseAccessResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_revokeCaseAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:revokeCaseAccess"/>
+  </wsdl:message>
+  <wsdl:message name="ISecureWorkflowEngineSOA_revokeCaseAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:revokeCaseAccessResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ISecureWorkflowEngineSOA">
+    <wsdl:operation name="createCasesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" message="tns:ISecureWorkflowEngineSOA_createCasesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_createCasesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="performActivityAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/performActivityAsString" message="tns:ISecureWorkflowEngineSOA_performActivityAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/performActivityAsStringResponse" message="tns:ISecureWorkflowEngineSOA_performActivityAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="setEventAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsString" message="tns:ISecureWorkflowEngineSOA_setEventAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsStringResponse" message="tns:ISecureWorkflowEngineSOA_setEventAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCasesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getCasesAsString" message="tns:ISecureWorkflowEngineSOA_getCasesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getCasesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getCasesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="saveActivityAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/saveActivityAsString" message="tns:ISecureWorkflowEngineSOA_saveActivityAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/saveActivityAsStringResponse" message="tns:ISecureWorkflowEngineSOA_saveActivityAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getActivitiesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getActivitiesAsString" message="tns:ISecureWorkflowEngineSOA_getActivitiesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getActivitiesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getActivitiesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="suspendCasesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/suspendCasesAsString" message="tns:ISecureWorkflowEngineSOA_suspendCasesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/suspendCasesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_suspendCasesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="resumeCasesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/resumeCasesAsString" message="tns:ISecureWorkflowEngineSOA_resumeCasesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/resumeCasesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_resumeCasesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getClosedActivitiesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getClosedActivitiesAsString" message="tns:ISecureWorkflowEngineSOA_getClosedActivitiesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getClosedActivitiesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getClosedActivitiesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEventsAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getEventsAsString" message="tns:ISecureWorkflowEngineSOA_getEventsAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getEventsAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getEventsAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowClassesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getWorkflowClassesAsString" message="tns:ISecureWorkflowEngineSOA_getWorkflowClassesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getWorkflowClassesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getWorkflowClassesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getCategoriesAsString" message="tns:ISecureWorkflowEngineSOA_getCategoriesAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getCategoriesAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getCategoriesAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAssignationLogAsString">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getAssignationLogAsString" message="tns:ISecureWorkflowEngineSOA_getAssignationLogAsString_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/getAssignationLogAsStringResponse" message="tns:ISecureWorkflowEngineSOA_getAssignationLogAsString_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="grantCaseAccess">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/grantCaseAccess" message="tns:ISecureWorkflowEngineSOA_grantCaseAccess_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/grantCaseAccessResponse" message="tns:ISecureWorkflowEngineSOA_grantCaseAccess_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="revokeCaseAccess">
+      <wsdl:input wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/revokeCaseAccess" message="tns:ISecureWorkflowEngineSOA_revokeCaseAccess_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/ISecureWorkflowEngineSOA/revokeCaseAccessResponse" message="tns:ISecureWorkflowEngineSOA_revokeCaseAccess_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ISecureWorkflowEngineSOA" type="tns:ISecureWorkflowEngineSOA">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISecureWorkflowEngineSOA_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createCasesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="performActivityAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/performActivityAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setEventAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCasesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getCasesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveActivityAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/saveActivityAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActivitiesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getActivitiesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="suspendCasesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/suspendCasesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resumeCasesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/resumeCasesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClosedActivitiesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getClosedActivitiesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEventsAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getEventsAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkflowClassesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getWorkflowClassesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getCategoriesAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAssignationLogAsString">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/getAssignationLogAsString" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="grantCaseAccess">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/grantCaseAccess" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="revokeCaseAccess">
+      <soap12:operation soapAction="http://tempuri.org/ISecureWorkflowEngineSOA/revokeCaseAccess" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecureWorkflowEngineSOA">
+    <wsdl:port name="WSHttpBinding_ISecureWorkflowEngineSOA" binding="tns:WSHttpBinding_ISecureWorkflowEngineSOA">
+      <soap12:address location="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:element name="createCasesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createCasesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="createCasesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="performActivityAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="activityInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="performActivityAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="performActivityAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setEventAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eventInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setEventAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="setEventAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCasesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseFilters" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCasesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCasesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveActivityAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="activityInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveActivityAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saveActivityAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getActivitiesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="activityFilters" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getActivitiesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getActivitiesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="suspendCasesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cases" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="suspendCasesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="suspendCasesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resumeCasesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cases" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resumeCasesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="resumeCasesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClosedActivitiesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClosedActivitiesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getClosedActivitiesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEventsAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="actFilters" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEventsAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getEventsAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWorkflowClassesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWorkflowClassesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getWorkflowClassesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCategoriesAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="appName" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCategoriesAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCategoriesAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAssignationLogAsString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="info" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAssignationLogAsStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAssignationLogAsStringResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="grantCaseAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseAccessXML" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="grantCaseAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="grantCaseAccessResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="revokeCaseAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseAccessXML" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="revokeCaseAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="revokeCaseAccessResult" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</con:endpoint></con:endpoints><con:operation id="4107078d-3f3d-4396-9173-f07c5d1bf124" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" name="createCasesAsString" bindingOperationName="createCasesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="4107078d-3f3d-4396-9173-f07c5d1bf124fileName">createCasesAsString</con:setting></con:settings><con:call id="1f0a5f5c-8720-4335-afdb-549f8ab0b5b9" name="Create ticket (all fields)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:createCasesAsString>
+         <tem:xml>
+          <![CDATA[
+            <BizAgiWSParam>
+              <domain>domain</domain>
+              <userName>Portal</userName>
+              <Cases>
+                <Case>
+                <Process>TicketManagement</Process>
+                <Entities>
+                  <mTKMTicket>
+                    <bAuthorizationUseDataClien>1</bAuthorizationUseDataClien>
+                    <bErrorOnCloud>0</bErrorOnCloud>
+                    <kmCSCaseGeneralData>
+                      <kpCSCaseSource>
+                        <sCode>POR</sCode>
+                      </kpCSCaseSource>
+                      <ksCreationUser businessKey="userName='Portal'"/>
+                    </kmCSCaseGeneralData>
+                    <kmCustomerError>
+                      <sCRMId>TE</sCRMId>
+                    </kmCustomerError>
+                    <kmCustomerReporter>
+                      <sCRMId>DELETE2</sCRMId>
+                    </kmCustomerReporter>
+                    <mCustomerSupport>
+                      <kmCustomer>
+                        <sCRMId>DELETE2</sCRMId>
+                      </kmCustomer>
+                    </mCustomerSupport>
+                    <kmCustomerSupportContact>
+                      <sUsername><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sUsername>
+                      <mCustomerSupport>
+                        <kmCustomer>
+                          <sCRMId>SINOEXISTE</sCRMId>
+                        </kmCustomer>
+                      </mCustomerSupport>
+                      <kmPerson>
+                        <sTitle><![CDATA[Mr]]]]]]>><![CDATA[><![CDATA[</sTitle>
+                        <sName><![CDATA[Ronnie]]]]]]>><![CDATA[><![CDATA[</sName>
+                        <sLastName><![CDATA[Rivera]]]]]]>><![CDATA[><![CDATA[</sLastName>
+                        <sEmail><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sEmail>
+                        <sPhone><![CDATA[+44 (0) 7535 008 163]]]]]]>><![CDATA[><![CDATA[</sPhone>
+                        <ksTimeZone>26</ksTimeZone>
+                        <ksLanguage>62</ksLanguage>
+                      </kmPerson>
+                    </kmCustomerSupportContact>
+                    <kpBizagiProduct>
+                      <sCode>11.xNET</sCode>
+                    </kpBizagiProduct>
+                    <kpEnvironment>
+                      <sCode>PRD</sCode>
+                    </kpEnvironment>
+                    <kpTKMTaskType>
+                      <sCode>AA</sCode>
+                    </kpTKMTaskType>
+                    <kpTKMDatabase>
+                      <sCode>MSSQL2014</sCode>
+                    </kpTKMDatabase>
+                    <kpTKMRequestType>
+                      <sCode>ER</sCode>
+                    </kpTKMRequestType>
+                    <kpSeverity>
+                      <sCode>S1</sCode>
+                    </kpSeverity>
+                    <kpTKMSeverity>
+                      <sCode>PRODSYSDOWN</sCode>
+                    </kpTKMSeverity>
+                    <kpTKMSubcategory>
+                      <sCode>DATAVIR</sCode>
+                    </kpTKMSubcategory>
+                    <kpTKMTicketType>
+                      <sCode>EX</sCode>
+                    </kpTKMTicketType>
+                    <sCopyNotificationsTo><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sCopyNotificationsTo>
+                    <sDetails><![CDATA[Details of the issue]]]]]]>><![CDATA[><![CDATA[</sDetails>
+                    <sSuggestedInformation><![CDATA[Some information suggested]]]]]]>><![CDATA[><![CDATA[</sSuggestedInformation>
+                    <sSummary><![CDATA[Test ticket - Web portal CreateCaseAsString Test 29-07]]]]]]>><![CDATA[><![CDATA[</sSummary>
+                    <sVersion><![CDATA[11.2]]]]]]>><![CDATA[><![CDATA[</sVersion>
+                    <uAttachment>
+                      <File fileName="Attachment1.txt"><![CDATA[dGhpcyBpcyBhIHRlc3QgZG9jdW1lbnQ=]]]]]]>><![CDATA[><![CDATA[</File>
+                    </uAttachment>
+                    <kmShareFileFolder>
+                      <sFolderId>fo818704-58f0-4be2-a7ed-c2a29e9e87b8</sFolderId>
+                      <sParentFolderId>fof17255-8659-4271-823a-2d3e14f0fd96</sParentFolderId>
+                      <sFolderName>fff70031-5ece-4259-b9a5-88ff1850e092</sFolderName>
+                      <sFolderLink><![CDATA[https://bizagi.sharefile.com/r-rb139aa972c34ac1a]]]]]]>><![CDATA[><![CDATA[</sFolderLink>
+                      <dCreated>2019-01-01</dCreated>
+                      <dLinkExpiration>2019-10-13</dLinkExpiration>
+                      <kmCustomer>
+                        <sCRMId>TESTCRM</sCRMId>
+                      </kmCustomer>
+                      <kpShareFileFolderType>
+                        <sCode>TNCP</sCode>
+                      </kpShareFileFolderType>
+                    </kmShareFileFolder>
+                    <ksTimeZone>26</ksTimeZone>
+                    <ksLanguage>62</ksLanguage>
+                  </mTKMTicket>
+                </Entities>
+                </Case>
+              </Cases>
+            </BizAgiWSParam>
+          ]]]]>><![CDATA[
+         </tem:xml>
+      </tem:createCasesAsString>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="24a2b4a6-29c8-431a-b0b0-da3cdd16c9bf" name="Create ticket (report an error)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:createCasesAsString>
+         <tem:xml>
+          <![CDATA[
+            <BizAgiWSParam>
+              <domain>domain</domain>
+              <userName>Portal</userName>
+              <Cases>
+                <Case>
+                <Process>TicketManagement</Process>
+                <Entities>
+                  <mTKMTicket>
+                    <bAuthorizationUseDataClien>1</bAuthorizationUseDataClien>
+                    <bErrorOnCloud>0</bErrorOnCloud>
+                    <kmCSCaseGeneralData>
+                      <kpCSCaseSource>
+                        <sCode>POR</sCode>
+                      </kpCSCaseSource>
+                      <ksCreationUser businessKey="userName='Portal'"/>
+                    </kmCSCaseGeneralData>
+                    <kmCustomerError>
+                      <sCRMId>TE</sCRMId>
+                    </kmCustomerError>
+                    <kmCustomerReporter>
+                      <sCRMId>DELETE2</sCRMId>
+                    </kmCustomerReporter>
+                    <mCustomerSupport>
+                      <kmCustomer>
+                        <sCRMId>DELETE2</sCRMId>
+                      </kmCustomer>
+                    </mCustomerSupport>
+                    <kmCustomerSupportContact>
+                      <sUsername><![CDATA[chris.cain@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sUsername>
+                      <mCustomerSupport>
+                        <kmCustomer>
+                          <sCRMId>DELETE2</sCRMId>
+                        </kmCustomer>
+                      </mCustomerSupport>
+                      <kmPerson>
+                        <sTitle><![CDATA[Mr]]]]]]>><![CDATA[><![CDATA[</sTitle>
+                        <sName><![CDATA[Chris]]]]]]>><![CDATA[><![CDATA[</sName>
+                        <sLastName><![CDATA[Cain]]]]]]>><![CDATA[><![CDATA[</sLastName>
+                        <sEmail><![CDATA[chris.cain@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sEmail>
+                        <sPhone><![CDATA[+44 (0) 7535 008 163]]]]]]>><![CDATA[><![CDATA[</sPhone>
+                        <ksTimeZone>26</ksTimeZone>
+                        <ksLanguage>62</ksLanguage>
+                      </kmPerson>
+                    </kmCustomerSupportContact>
+                    <kpBizagiProduct>
+                      <sCode>11.xNET</sCode>
+                    </kpBizagiProduct>
+                    <kpEnvironment>
+                      <sCode>PRD</sCode>
+                    </kpEnvironment>
+                    <kpTKMDatabase>
+                      <sCode>MSSQL2014</sCode>
+                    </kpTKMDatabase>
+                    <kpTKMRequestType>
+                      <sCode>ER</sCode>
+                    </kpTKMRequestType>
+                    <kpSeverity>
+                      <sCode>S1</sCode>
+                    </kpSeverity>
+                    <kpTKMSeverity>
+                      <sCode>PRODSYSDOWN</sCode>
+                    </kpTKMSeverity>
+                    <kpTKMSubcategory>
+                      <sCode>DATAVIR</sCode>
+                    </kpTKMSubcategory>
+                    <kpTKMTicketType>
+                      <sCode>EX</sCode>
+                    </kpTKMTicketType>
+                    <sCopyNotificationsTo><![CDATA[chris.cain@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sCopyNotificationsTo>
+                    <sDetails><![CDATA[Details of the issue]]]]]]>><![CDATA[><![CDATA[</sDetails>
+                    <sSuggestedInformation><![CDATA[Some information suggested]]]]]]>><![CDATA[><![CDATA[</sSuggestedInformation>
+                    <sSummary><![CDATA[Test ticket - Web portal CreateCaseAsString]]]]]]>><![CDATA[><![CDATA[</sSummary>
+                    <sVersion><![CDATA[11.2]]]]]]>><![CDATA[><![CDATA[</sVersion>
+                    <uAttachment>
+                      <File fileName="Attachment1.txt"><![CDATA[dGhpcyBpcyBhIHRlc3QgZG9jdW1lbnQ=]]]]]]>><![CDATA[><![CDATA[</File>
+                    </uAttachment>
+                    <kmShareFileFolder>
+                      <sFolderId>fo818704-58f0-4be2-a7ed-c2a29e9e87b8</sFolderId>
+                      <sParentFolderId>fof17255-8659-4271-823a-2d3e14f0fd96</sParentFolderId>
+                      <sFolderName>fff70031-5ece-4259-b9a5-88ff1850e092</sFolderName>
+                      <sFolderLink><![CDATA[https://bizagi.sharefile.com/r-rb139aa972c34ac1a]]]]]]>><![CDATA[><![CDATA[</sFolderLink>
+                      <dCreated>2019-01-01</dCreated>
+                      <dLinkExpiration>2019-10-13</dLinkExpiration>
+                      <kmCustomer>
+                        <sCRMId>TESTCRM</sCRMId>
+                      </kmCustomer>
+                      <kpShareFileFolderType>
+                        <sCode>TNCP</sCode>
+                      </kpShareFileFolderType>
+                      <dCreated>2019-07-05</dCreated>
+                    </kmShareFileFolder>
+                    <ksTimeZone>26</ksTimeZone>
+                    <ksLanguage>62</ksLanguage>
+                  </mTKMTicket>
+                </Entities>
+                </Case>
+              </Cases>
+            </BizAgiWSParam>
+          ]]]]>><![CDATA[
+         </tem:xml>
+      </tem:createCasesAsString>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="09284ee1-d906-43e8-85a0-f3b95fed35ce" name="Create ticket (cloud task)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:createCasesAsString>
+         <tem:xml>
+          <![CDATA[
+            <BizAgiWSParam>
+              <domain>domain</domain>
+              <userName>Portal</userName>
+              <Cases>
+                <Case>
+                <Process>TicketManagement</Process>
+                <Entities>
+                  <mTKMTicket>
+                    <kmCSCaseGeneralData>
+                      <kpCSCaseSource>
+                        <sCode>POR</sCode>
+                      </kpCSCaseSource>
+                      <ksCreationUser businessKey="userName='Portal'"/>
+                    </kmCSCaseGeneralData>
+                    <kmCustomerError>
+                      <sCRMId>TE</sCRMId>
+                    </kmCustomerError>
+                    <kmCustomerReporter>
+                      <sCRMId>DELETE2</sCRMId>
+                    </kmCustomerReporter>
+                    <mCustomerSupport>
+                      <kmCustomer>
+                        <sCRMId>DELETE2</sCRMId>
+                      </kmCustomer>
+                    </mCustomerSupport>
+                    <kmCustomerSupportContact>
+                      <sUsername><![CDATA[chris.cain@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sUsername>
+                      <mCustomerSupport>
+                        <kmCustomer>
+                          <sCRMId>DELETE2</sCRMId>
+                        </kmCustomer>
+                      </mCustomerSupport>
+                      <kmPerson>
+                        <sTitle><![CDATA[Mr]]]]]]>><![CDATA[><![CDATA[</sTitle>
+                        <sName><![CDATA[Chris]]]]]]>><![CDATA[><![CDATA[</sName>
+                        <sLastName><![CDATA[Cain]]]]]]>><![CDATA[><![CDATA[</sLastName>
+                        <sEmail><![CDATA[chris.cain@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sEmail>
+                        <sPhone><![CDATA[+44 (0) 7535 008 163]]]]]]>><![CDATA[><![CDATA[</sPhone>
+                        <ksTimeZone>26</ksTimeZone>
+                        <ksLanguage>62</ksLanguage>
+                      </kmPerson>
+                    </kmCustomerSupportContact>
+                    <kpEnvironment>
+                      <sCode>PRD</sCode>
+                    </kpEnvironment>
+                    <kpTKMTaskType>
+                      <sCode>AA</sCode>
+                    </kpTKMTaskType>
+                    <kpTKMRequestType>
+                      <sCode>ER</sCode>
+                    </kpTKMRequestType>
+                    <kpTKMTicketType>
+                      <sCode>EX</sCode>
+                    </kpTKMTicketType>
+                    <sCopyNotificationsTo><![CDATA[chris.cain@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sCopyNotificationsTo>
+                    <sDetails><![CDATA[Details of the issue]]]]]]>><![CDATA[><![CDATA[</sDetails>
+                    <sSuggestedInformation><![CDATA[Some information suggested]]]]]]>><![CDATA[><![CDATA[</sSuggestedInformation>
+                    <sSummary><![CDATA[Test ticket - Web portal CreateCaseAsString]]]]]]>><![CDATA[><![CDATA[</sSummary>
+                    <sVersion><![CDATA[11.2]]]]]]>><![CDATA[><![CDATA[</sVersion>
+                    <uAttachment>
+                      <File fileName="Attachment1.txt"><![CDATA[dGhpcyBpcyBhIHRlc3QgZG9jdW1lbnQ=]]]]]]>><![CDATA[><![CDATA[</File>
+                    </uAttachment>
+                    <kmShareFileFolder>
+                      <sFolderId>fo818704-58f0-4be2-a7ed-c2a29e9e87b8</sFolderId>
+                      <sParentFolderId>fof17255-8659-4271-823a-2d3e14f0fd96</sParentFolderId>
+                      <sFolderName>fff70031-5ece-4259-b9a5-88ff1850e092</sFolderName>
+                      <sFolderLink><![CDATA[https://bizagi.sharefile.com/r-rb139aa972c34ac1a]]]]]]>><![CDATA[><![CDATA[</sFolderLink>
+                      <dCreated>2019-01-01</dCreated>
+                      <dLinkExpiration>2019-10-13</dLinkExpiration>
+                      <kmCustomer>
+                        <sCRMId>TESTCRM</sCRMId>
+                      </kmCustomer>
+                      <kpShareFileFolderType>
+                        <sCode>TNCP</sCode>
+                      </kpShareFileFolderType>
+                      <dCreated>2019-07-05</dCreated>
+                    </kmShareFileFolder>
+                    <ksTimeZone>26</ksTimeZone>
+                    <ksLanguage>62</ksLanguage>
+                  </mTKMTicket>
+                </Entities>
+                </Case>
+              </Cases>
+            </BizAgiWSParam>
+          ]]]]>><![CDATA[
+         </tem:xml>
+      </tem:createCasesAsString>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="61261e18-47bc-412a-9d1e-22b2ffd05774" name="Create ticket (no sharefile)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:createCasesAsString>
+         <tem:xml>
+          <![CDATA[
+            <BizAgiWSParam>
+              <domain>domain</domain>
+              <userName>Portal</userName>
+              <Cases>
+                <Case>
+                <Process>TicketManagement</Process>
+                <Entities>
+                  <mTKMTicket>
+                    <bAuthorizationUseDataClien>1</bAuthorizationUseDataClien>
+                    <bErrorOnCloud>0</bErrorOnCloud>
+                    <kmCSCaseGeneralData>
+                      <kpCSCaseSource>
+                        <sCode>POR</sCode>
+                      </kpCSCaseSource>
+                      <ksCreationUser businessKey="userName='Portal'"/>
+                    </kmCSCaseGeneralData>
+                    <kmCustomerError>
+                      <sCRMId>TE</sCRMId>
+                    </kmCustomerError>
+                    <kmCustomerReporter>
+                      <sCRMId>DELETE2</sCRMId>
+                    </kmCustomerReporter>
+                    <mCustomerSupport>
+                      <kmCustomer>
+                        <sCRMId>DELETE2</sCRMId>
+                      </kmCustomer>
+                    </mCustomerSupport>
+                    <kmCustomerSupportContact>
+                      <sUsername><![CDATA[chris.cain@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sUsername>
+                      <mCustomerSupport>
+                        <kmCustomer>
+                          <sCRMId>DELETE2</sCRMId>
+                        </kmCustomer>
+                      </mCustomerSupport>
+                      <kmPerson>
+                        <sTitle><![CDATA[Mr]]]]]]>><![CDATA[><![CDATA[</sTitle>
+                        <sName><![CDATA[Chris]]]]]]>><![CDATA[><![CDATA[</sName>
+                        <sLastName><![CDATA[Cain]]]]]]>><![CDATA[><![CDATA[</sLastName>
+                        <sEmail><![CDATA[chris.cain@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sEmail>
+                        <sPhone><![CDATA[+44 (0) 7535 008 163]]]]]]>><![CDATA[><![CDATA[</sPhone>
+                        <ksTimeZone>26</ksTimeZone>
+                        <ksLanguage>62</ksLanguage>
+                      </kmPerson>
+                    </kmCustomerSupportContact>
+                    <kpBizagiProduct>
+                      <sCode>11.xNET</sCode>
+                    </kpBizagiProduct>
+                    <kpEnvironment>
+                      <sCode>PRD</sCode>
+                    </kpEnvironment>
+                    <kpTKMDatabase>
+                      <sCode>MSSQL2014</sCode>
+                    </kpTKMDatabase>
+                    <kpTKMRequestType>
+                      <sCode>ER</sCode>
+                    </kpTKMRequestType>
+                    <kpSeverity>
+                      <sCode>S1</sCode>
+                    </kpSeverity>
+                    <kpTKMSeverity>
+                      <sCode>PRODSYSDOWN</sCode>
+                    </kpTKMSeverity>
+                    <kpTKMSubcategory>
+                      <sCode>DATAVIR</sCode>
+                    </kpTKMSubcategory>
+                    <kpTKMTicketType>
+                      <sCode>EX</sCode>
+                    </kpTKMTicketType>
+                    <sCopyNotificationsTo><![CDATA[chris.cain@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sCopyNotificationsTo>
+                    <sDetails><![CDATA[Details of the issue]]]]]]>><![CDATA[><![CDATA[</sDetails>
+                    <sSuggestedInformation><![CDATA[Some information suggested]]]]]]>><![CDATA[><![CDATA[</sSuggestedInformation>
+                    <sSummary><![CDATA[Test ticket - Web portal CreateCaseAsString]]]]]]>><![CDATA[><![CDATA[</sSummary>
+                    <sVersion><![CDATA[11.2]]]]]]>><![CDATA[><![CDATA[</sVersion>
+                    <uAttachment>
+                      <File fileName="Attachment1.txt"><![CDATA[dGhpcyBpcyBhIHRlc3QgZG9jdW1lbnQ=]]]]]]>><![CDATA[><![CDATA[</File>
+                    </uAttachment>
+                    <ksTimeZone>26</ksTimeZone>
+                    <ksLanguage>62</ksLanguage>
+                  </mTKMTicket>
+                </Entities>
+                </Case>
+              </Cases>
+            </BizAgiWSParam>
+          ]]]]>><![CDATA[
+         </tem:xml>
+      </tem:createCasesAsString>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b81441ef-6241-482e-921d-8e0133af4725" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getActivitiesAsString" name="getActivitiesAsString" bindingOperationName="getActivitiesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="b81441ef-6241-482e-921d-8e0133af4725fileName">getActivitiesAsString</con:setting></con:settings></con:operation><con:operation id="3e43ecac-068e-427c-88fe-dab2f4bb6654" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getAssignationLogAsString" name="getAssignationLogAsString" bindingOperationName="getAssignationLogAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="3e43ecac-068e-427c-88fe-dab2f4bb6654fileName">getAssignationLogAsString</con:setting></con:settings></con:operation><con:operation id="867d897a-b427-486c-b918-b1e2d109c5e3" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getCasesAsString" name="getCasesAsString" bindingOperationName="getCasesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="867d897a-b427-486c-b918-b1e2d109c5e3fileName">getCasesAsString</con:setting></con:settings></con:operation><con:operation id="6014d15d-2440-46ec-ae93-57fada7c6357" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getCategoriesAsString" name="getCategoriesAsString" bindingOperationName="getCategoriesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="6014d15d-2440-46ec-ae93-57fada7c6357fileName">getCategoriesAsString</con:setting></con:settings></con:operation><con:operation id="9e854479-3227-4d10-bb85-39e20806f5a7" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getClosedActivitiesAsString" name="getClosedActivitiesAsString" bindingOperationName="getClosedActivitiesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="9e854479-3227-4d10-bb85-39e20806f5a7fileName">getClosedActivitiesAsString</con:setting></con:settings></con:operation><con:operation id="7ce890e0-a798-44b7-a836-23c0f1c5e2fb" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getEventsAsString" name="getEventsAsString" bindingOperationName="getEventsAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="7ce890e0-a798-44b7-a836-23c0f1c5e2fbfileName">getEventsAsString</con:setting></con:settings></con:operation><con:operation id="f3f1b36d-f0b7-48f1-b118-65037761e04e" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getWorkflowClassesAsString" name="getWorkflowClassesAsString" bindingOperationName="getWorkflowClassesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="f3f1b36d-f0b7-48f1-b118-65037761e04efileName">getWorkflowClassesAsString</con:setting></con:settings></con:operation><con:operation id="91540314-ea73-497f-a8a6-49676528ab9c" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/grantCaseAccess" name="grantCaseAccess" bindingOperationName="grantCaseAccess" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="91540314-ea73-497f-a8a6-49676528ab9cfileName">grantCaseAccess</con:setting></con:settings></con:operation><con:operation id="e8ca6a18-7309-41be-9ce6-a2e4537091f5" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/performActivityAsString" name="performActivityAsString" bindingOperationName="performActivityAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="e8ca6a18-7309-41be-9ce6-a2e4537091f5fileName">performActivityAsString</con:setting></con:settings></con:operation><con:operation id="d4a5440c-d682-4122-aa32-da5756e2a79c" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/resumeCasesAsString" name="resumeCasesAsString" bindingOperationName="resumeCasesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="d4a5440c-d682-4122-aa32-da5756e2a79cfileName">resumeCasesAsString</con:setting></con:settings></con:operation><con:operation id="57df9e14-3d50-474a-98fb-d82e5feca928" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/revokeCaseAccess" name="revokeCaseAccess" bindingOperationName="revokeCaseAccess" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="57df9e14-3d50-474a-98fb-d82e5feca928fileName">revokeCaseAccess</con:setting></con:settings></con:operation><con:operation id="ab7986c7-70a4-4b54-9fdc-62c0958b063d" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/saveActivityAsString" name="saveActivityAsString" bindingOperationName="saveActivityAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="ab7986c7-70a4-4b54-9fdc-62c0958b063dfileName">saveActivityAsString</con:setting></con:settings></con:operation><con:operation id="ca796bfc-7823-4e65-899f-8ce254cb1f78" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsString" name="setEventAsString" bindingOperationName="setEventAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="ca796bfc-7823-4e65-899f-8ce254cb1f78fileName">setEventAsString</con:setting></con:settings><con:call id="37655b9f-771a-4d18-8726-cfb331974adc" name="Update ticket (post comment)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+  <soap:Header/>
+  <soap:Body>
+    <tem:setEventAsString>
+      <tem:eventInfo>
+        <![CDATA[
+          <BizAgiWSParam>
+            <domain>domain</domain>
+            <userName>Portal</userName>
+            <Events>
+              <Event>
+                <EventData>
+                  <idCase>4927</idCase>
+                  <eventName>TKM_ReceiveComment</eventName>
+                </EventData>
+                <Entities>
+                  <mTKMTicket>                  
+                    <bCustomerApprovedClosure>1</bCustomerApprovedClosure>
+                    <bCustomerRequestCancel>0</bCustomerRequestCancel>
+                    <xTKMActionsTaken>
+                      <mTKMAction>
+                        <bCustomerComment>1</bCustomerComment>
+                        <sActionTaken><![CDATA[XXX post comment details - Prueba bCustomerApprovedC ]]]]]]>><![CDATA[><![CDATA[</sActionTaken>
+                        <uAttachment>
+                          <File fileName="Attachment2.txt"><![CDATA[dGhpcyBpcyBhIHRlc3QgZG9jdW1lbnQ=]]]]]]>><![CDATA[><![CDATA[</File>
+                        </uAttachment>
+                        <sCommentBy><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sCommentBy>
+                        <kpTKMAction>
+                          <sCode>POS</sCode>
+                        </kpTKMAction>
+                      </mTKMAction>
+                    </xTKMActionsTaken>
+                  </mTKMTicket>
+                </Entities>
+              </Event>
+            </Events>
+          </BizAgiWSParam>
+        ]]]]>><![CDATA[
+      </tem:eventInfo>
+    </tem:setEventAsString>
+  </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="132d6f3b-cfab-47f3-8f77-33572d8fc0dc" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/suspendCasesAsString" name="suspendCasesAsString" bindingOperationName="suspendCasesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="132d6f3b-cfab-47f3-8f77-33572d8fc0dcfileName">suspendCasesAsString</con:setting></con:settings></con:operation></con:interface><con:savedRecentRuns>1</con:savedRecentRuns><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:authRepository/><con:tags/></con:soapui-project>
