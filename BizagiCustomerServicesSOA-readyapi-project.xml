@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="e3ddbd3b-7ceb-4d0e-af09-b04609297d02" activeEnvironment="Default environment" name="BizagiCustomerServicesSOA" resourceRoot="${projectDir}" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.7.0 2019-05-30T13:25:24Z" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="6ceebb15-ac0e-4da5-bf12-eae6fd1e1a69" wsaVersion="200508" name="WSHttpBinding_ISecureQuerySOA" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_ISecureQuerySOA" soapVersion="1_2" anonymous="required" definition="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="6ceebb15-ac0e-4da5-bf12-eae6fd1e1a69fileName">WSHttpBinding_ISecureQuerySOA</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl"><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SecureQuerySOA" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+<con:soapui-project id="e3ddbd3b-7ceb-4d0e-af09-b04609297d02" activeEnvironment="Default" name="BizagiCustomerServicesSOA" resourceRoot="${projectDir}" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.7.0 2019-05-30T13:25:24Z" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="6ceebb15-ac0e-4da5-bf12-eae6fd1e1a69" wsaVersion="200508" name="WSHttpBinding_ISecureQuerySOA" type="wsdl" bindingName="{http://tempuri.org/}WSHttpBinding_ISecureQuerySOA" soapVersion="1_2" anonymous="required" definition="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="6ceebb15-ac0e-4da5-bf12-eae6fd1e1a69fileName">WSHttpBinding_ISecureQuerySOA</con:setting></con:settings><con:definitionCache type="TEXT" rootPart="https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl"><con:part><con:url>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/QuerySOA.svc?singleWsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SecureQuerySOA" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
   <wsp:Policy wsu:Id="WSHttpBinding_ISecureQuerySOA_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -1730,22 +1730,18 @@
                       <ksCreationUser businessKey="userName='Portal'"/>
                     </kmCSCaseGeneralData>
                     <kmCustomerError>
-                      <sCRMId>TE</sCRMId>
+                      <sCRMId>999999001</sCRMId>
                     </kmCustomerError>
                     <kmCustomerReporter>
-                      <sCRMId>DELETE2</sCRMId>
+                      <sCRMId>999999001</sCRMId>
                     </kmCustomerReporter>
                     <mCustomerSupport>
-                      <kmCustomer>
-                        <sCRMId>DELETE2</sCRMId>
-                      </kmCustomer>
+                      <sCRMId>999999001</sCRMId>	
                     </mCustomerSupport>
                     <kmCustomerSupportContact>
                       <sUsername><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sUsername>
                       <mCustomerSupport>
-                        <kmCustomer>
-                          <sCRMId>SINOEXISTE</sCRMId>
-                        </kmCustomer>
+                        <sCRMId>999999001</sCRMId>
                       </mCustomerSupport>
                       <kmPerson>
                         <sTitle><![CDATA[Mr]]]]]]>><![CDATA[><![CDATA[</sTitle>
@@ -1800,7 +1796,7 @@
                       <dCreated>2019-01-01</dCreated>
                       <dLinkExpiration>2019-10-13</dLinkExpiration>
                       <kmCustomer>
-                        <sCRMId>TESTCRM</sCRMId>
+                        <sCRMId>999999001</sCRMId>
                       </kmCustomer>
                       <kpShareFileFolderType>
                         <sCode>TNCP</sCode>
