@@ -1730,18 +1730,18 @@
                       <ksCreationUser businessKey="userName='Portal'"/>
                     </kmCSCaseGeneralData>
                     <kmCustomerError>
-                      <sCRMId>999999001</sCRMId>
+                      <sCRMId>99993190</sCRMId>
                     </kmCustomerError>
                     <kmCustomerReporter>
-                      <sCRMId>999999001</sCRMId>
+                      <sCRMId>99993190</sCRMId>
                     </kmCustomerReporter>
                     <mCustomerSupport>
-                      <sCRMId>999999001</sCRMId>	
+                      <sCRMId>99993190</sCRMId>	
                     </mCustomerSupport>
                     <kmCustomerSupportContact>
                       <sUsername><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sUsername>
                       <mCustomerSupport>
-                        <sCRMId>999999001</sCRMId>
+                        <sCRMId>TEST</sCRMId>
                       </mCustomerSupport>
                       <kmPerson>
                         <sTitle><![CDATA[Mr]]]]]]>><![CDATA[><![CDATA[</sTitle>
@@ -1796,7 +1796,7 @@
                       <dCreated>2019-01-01</dCreated>
                       <dLinkExpiration>2019-10-13</dLinkExpiration>
                       <kmCustomer>
-                        <sCRMId>999999001</sCRMId>
+                        <sCRMId>99993190</sCRMId>
                       </kmCustomer>
                       <kpShareFileFolderType>
                         <sCode>TNCP</sCode>
@@ -2108,6 +2108,112 @@
          </tem:xml>
       </tem:createCasesAsString>
    </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call><con:call id="5e71fb3a-4882-4f6a-8cd5-2fda09cad511" name="Copy of Create ticket (all fields)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:createCasesAsString>
+         <tem:xml>
+          <![CDATA[
+            <BizAgiWSParam>
+              <domain>domain</domain>
+              <userName>Portal</userName>
+              <Cases>
+                <Case>
+                <Process>TicketManagement</Process>
+                <Entities>
+                  <mTKMTicket>
+                    <bAuthorizationUseDataClien>1</bAuthorizationUseDataClien>
+                    <bErrorOnCloud>0</bErrorOnCloud>
+                    <kmCSCaseGeneralData>
+                      <kpCSCaseSource>
+                        <sCode>POR</sCode>
+                      </kpCSCaseSource>
+                      <ksCreationUser businessKey="userName='Portal'"/>
+                    </kmCSCaseGeneralData>
+                    <kmCustomerError>
+                      <sCRMId>999999001</sCRMId>
+                    </kmCustomerError>
+                    <kmCustomerReporter>
+                      <sCRMId>999999001</sCRMId>
+                    </kmCustomerReporter>
+                    <mCustomerSupport>
+                      <sCRMId>999999001</sCRMId>    
+                    </mCustomerSupport>
+                    <kmCustomerSupportContact>
+                      <sUsername><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sUsername>
+                      <mCustomerSupport>
+                        <sCRMId>999999001</sCRMId>
+                      </mCustomerSupport>
+                      <kmPerson>
+                        <sTitle><![CDATA[Mr]]]]]]>><![CDATA[><![CDATA[</sTitle>
+                        <sName><![CDATA[Ronnie]]]]]]>><![CDATA[><![CDATA[</sName>
+                        <sLastName><![CDATA[Rivera]]]]]]>><![CDATA[><![CDATA[</sLastName>
+                        <sEmail><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sEmail>
+                        <sPhone><![CDATA[+44 (0) 7535 008 163]]]]]]>><![CDATA[><![CDATA[</sPhone>
+                        <ksTimeZone>26</ksTimeZone>
+                        <ksLanguage>62</ksLanguage>
+                      </kmPerson>
+                    </kmCustomerSupportContact>
+                    <kpBizagiProduct>
+                      <sCode>11.xNET</sCode>
+                    </kpBizagiProduct>
+                    <kpEnvironment>
+                      <sCode>PRD</sCode>
+                    </kpEnvironment>
+                    <kpTKMTaskType>
+                      <sCode>AA</sCode>
+                    </kpTKMTaskType>
+                    <kpTKMDatabase>
+                      <sCode>MSSQL2014</sCode>
+                    </kpTKMDatabase>
+                    <kpTKMRequestType>
+                      <sCode>ER</sCode>
+                    </kpTKMRequestType>
+                    <kpSeverity>
+                      <sCode>S1</sCode>
+                    </kpSeverity>
+                    <kpTKMSeverity>
+                      <sCode>PRODSYSDOWN</sCode>
+                    </kpTKMSeverity>
+                    <kpTKMSubcategory>
+                      <sCode>DATAVIR</sCode>
+                    </kpTKMSubcategory>
+                    <kpTKMTicketType>
+                      <sCode>EX</sCode>
+                    </kpTKMTicketType>
+                    <sCopyNotificationsTo><![CDATA[ronnie.rivera@bizagi.com]]]]]]>><![CDATA[><![CDATA[</sCopyNotificationsTo>
+                    <sDetails><![CDATA[Details of the issue]]]]]]>><![CDATA[><![CDATA[</sDetails>
+                    <sSuggestedInformation><![CDATA[Some information suggested]]]]]]>><![CDATA[><![CDATA[</sSuggestedInformation>
+                    <sSummary><![CDATA[Test ticket - Web portal CreateCaseAsString Test 29-07]]]]]]>><![CDATA[><![CDATA[</sSummary>
+                    <sVersion><![CDATA[11.2]]]]]]>><![CDATA[><![CDATA[</sVersion>
+                    <uAttachment>
+                      <File fileName="Attachment1.txt"><![CDATA[dGhpcyBpcyBhIHRlc3QgZG9jdW1lbnQ=]]]]]]>><![CDATA[><![CDATA[</File>
+                    </uAttachment>
+                    <kmShareFileFolder>
+                      <sFolderId>fo818704-58f0-4be2-a7ed-c2a29e9e87b8</sFolderId>
+                      <sParentFolderId>fof17255-8659-4271-823a-2d3e14f0fd96</sParentFolderId>
+                      <sFolderName>fff70031-5ece-4259-b9a5-88ff1850e092</sFolderName>
+                      <sFolderLink><![CDATA[https://bizagi.sharefile.com/r-rb139aa972c34ac1a]]]]]]>><![CDATA[><![CDATA[</sFolderLink>
+                      <dCreated>2019-01-01</dCreated>
+                      <dLinkExpiration>2019-10-13</dLinkExpiration>
+                      <kmCustomer>
+                        <sCRMId>999999001</sCRMId>
+                      </kmCustomer>
+                      <kpShareFileFolderType>
+                        <sCode>TNCP</sCode>
+                      </kpShareFileFolderType>
+                    </kmShareFileFolder>
+                    <ksTimeZone>26</ksTimeZone>
+                    <ksLanguage>62</ksLanguage>
+                  </mTKMTicket>
+                </Entities>
+                </Case>
+              </Cases>
+            </BizAgiWSParam>
+          ]]]]>><![CDATA[
+         </tem:xml>
+      </tem:createCasesAsString>
+   </soap:Body>
 </soap:Envelope>]]></con:request><con:credentials><con:username>BizagiAdmonWS</con:username><con:password>Tempo123</con:password><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISecureWorkflowEngineSOA/createCasesAsString" addDefaultTo="true"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b81441ef-6241-482e-921d-8e0133af4725" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getActivitiesAsString" name="getActivitiesAsString" bindingOperationName="getActivitiesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="b81441ef-6241-482e-921d-8e0133af4725fileName">getActivitiesAsString</con:setting></con:settings></con:operation><con:operation id="3e43ecac-068e-427c-88fe-dab2f4bb6654" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getAssignationLogAsString" name="getAssignationLogAsString" bindingOperationName="getAssignationLogAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="3e43ecac-068e-427c-88fe-dab2f4bb6654fileName">getAssignationLogAsString</con:setting></con:settings></con:operation><con:operation id="867d897a-b427-486c-b918-b1e2d109c5e3" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getCasesAsString" name="getCasesAsString" bindingOperationName="getCasesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="867d897a-b427-486c-b918-b1e2d109c5e3fileName">getCasesAsString</con:setting></con:settings></con:operation><con:operation id="6014d15d-2440-46ec-ae93-57fada7c6357" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getCategoriesAsString" name="getCategoriesAsString" bindingOperationName="getCategoriesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="6014d15d-2440-46ec-ae93-57fada7c6357fileName">getCategoriesAsString</con:setting></con:settings></con:operation><con:operation id="9e854479-3227-4d10-bb85-39e20806f5a7" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getClosedActivitiesAsString" name="getClosedActivitiesAsString" bindingOperationName="getClosedActivitiesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="9e854479-3227-4d10-bb85-39e20806f5a7fileName">getClosedActivitiesAsString</con:setting></con:settings></con:operation><con:operation id="7ce890e0-a798-44b7-a836-23c0f1c5e2fb" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getEventsAsString" name="getEventsAsString" bindingOperationName="getEventsAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="7ce890e0-a798-44b7-a836-23c0f1c5e2fbfileName">getEventsAsString</con:setting></con:settings></con:operation><con:operation id="f3f1b36d-f0b7-48f1-b118-65037761e04e" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/getWorkflowClassesAsString" name="getWorkflowClassesAsString" bindingOperationName="getWorkflowClassesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="f3f1b36d-f0b7-48f1-b118-65037761e04efileName">getWorkflowClassesAsString</con:setting></con:settings></con:operation><con:operation id="91540314-ea73-497f-a8a6-49676528ab9c" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/grantCaseAccess" name="grantCaseAccess" bindingOperationName="grantCaseAccess" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="91540314-ea73-497f-a8a6-49676528ab9cfileName">grantCaseAccess</con:setting></con:settings></con:operation><con:operation id="e8ca6a18-7309-41be-9ce6-a2e4537091f5" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/performActivityAsString" name="performActivityAsString" bindingOperationName="performActivityAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="e8ca6a18-7309-41be-9ce6-a2e4537091f5fileName">performActivityAsString</con:setting></con:settings></con:operation><con:operation id="d4a5440c-d682-4122-aa32-da5756e2a79c" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/resumeCasesAsString" name="resumeCasesAsString" bindingOperationName="resumeCasesAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="d4a5440c-d682-4122-aa32-da5756e2a79cfileName">resumeCasesAsString</con:setting></con:settings></con:operation><con:operation id="57df9e14-3d50-474a-98fb-d82e5feca928" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/revokeCaseAccess" name="revokeCaseAccess" bindingOperationName="revokeCaseAccess" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings><con:setting id="57df9e14-3d50-474a-98fb-d82e5feca928fileName">revokeCaseAccess</con:setting></con:settings></con:operation><con:operation id="ab7986c7-70a4-4b54-9fdc-62c0958b063d" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/saveActivityAsString" name="saveActivityAsString" bindingOperationName="saveActivityAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="ab7986c7-70a4-4b54-9fdc-62c0958b063dfileName">saveActivityAsString</con:setting></con:settings></con:operation><con:operation id="ca796bfc-7823-4e65-899f-8ce254cb1f78" isOneWay="false" action="http://tempuri.org/ISecureWorkflowEngineSOA/setEventAsString" name="setEventAsString" bindingOperationName="setEventAsString" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings><con:setting id="ca796bfc-7823-4e65-899f-8ce254cb1f78fileName">setEventAsString</con:setting></con:settings><con:call id="37655b9f-771a-4d18-8726-cfb331974adc" name="Update ticket (post comment)" useWsAddressing="true" wssPasswordType="PasswordText"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://bizagixpressdev.eastus.cloudapp.azure.com/CustomerServices/WebServices/WorkflowEngineSOA.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
   <soap:Header/>
   <soap:Body>
@@ -2120,13 +2226,14 @@
             <Events>
               <Event>
                 <EventData>
-                  <idCase>4927</idCase>
+                  <idCase>203</idCase>
                   <eventName>TKM_ReceiveComment</eventName>
                 </EventData>
                 <Entities>
                   <mTKMTicket>                  
-                    <bCustomerApprovedClosure>1</bCustomerApprovedClosure>
+                    <bCustomerApprovedClosure>0</bCustomerApprovedClosure>
                     <bCustomerRequestCancel>0</bCustomerRequestCancel>
+                    <kpTKMSurvey>0</kpTKMSurvey>                    
                     <xTKMActionsTaken>
                       <mTKMAction>
                         <bCustomerComment>1</bCustomerComment>
